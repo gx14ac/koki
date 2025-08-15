@@ -1,6 +1,8 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
+
 export default function Home() {
   return (
     <div className="font-sans min-h-screen relative">
@@ -29,7 +31,7 @@ export default function Home() {
       
       {/* KOKI ロゴを中央に配置 */}
       <div className="relative z-20 flex items-center justify-center min-h-screen">
-        <div className="transition-transform hover:scale-105">
+        <Link href="/about" className="transition-transform hover:scale-105">
           <Image
             src="/koki-white.png"
             alt="KOKI"
@@ -38,7 +40,7 @@ export default function Home() {
             priority
             className="drop-shadow-2xl"
           />
-        </div>
+        </Link>
       </div>
 
     </div>

@@ -133,11 +133,11 @@ export default function SimpleMenu({ onClose, onMenuSelect, isDark = false }: Si
                     : 'text-white hover:text-gray-300'
                 }`}
                 onClick={() => handleMenuSelect(item)}
-                whileHover={{ 
-                  scale: 1.05,
-                  x: -10,
-                  transition: { type: "spring", damping: 15 }
-                }}
+                                     whileHover={{
+                       scale: 1.05,
+                       x: -10,
+                       transition: { type: "spring", damping: 10, stiffness: 200 }
+                     }}
                 whileTap={{ scale: 0.95 }}
               >
                 {item}

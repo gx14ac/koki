@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 export default function About() {
+
   return (
     <div className="font-sans min-h-screen relative" style={{ backgroundColor: 'rgb(238, 234, 228)' }}>
       {/* KOKIロゴ - 左上に配置 */}

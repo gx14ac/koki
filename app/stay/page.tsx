@@ -2,8 +2,20 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 export default function Stay() {
+  const [showReservation, setShowReservation] = useState(false);
+
+  // ページ読み込み後、少し遅れて予約フォームを表示
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowReservation(true);
+    }, 2000); // 2秒後に表示
+
+    return () => clearTimeout(timer);
+  }, []);
   return (
     <div className="font-sans min-h-screen relative" style={{ backgroundColor: 'rgb(238, 234, 228)' }}>
       {/* KOKIロゴ - 左上に配置 */}
@@ -31,8 +43,14 @@ export default function Stay() {
           {/* KINOMA */}
           <div className="mb-16 flex items-center gap-12 justify-center">
             <div className="w-96">
-              <div className="bg-gray-300 h-64 rounded-lg flex items-center justify-center">
-                <span className="text-gray-600">KINOMA Room Image</span>
+              <div className="h-64 rounded-lg overflow-hidden">
+                <Image
+                  src="/kinoma.JPG"
+                  alt="KINOMA Room"
+                  width={384}
+                  height={256}
+                  className="w-full h-full object-cover"
+                />
               </div>
             </div>
             <div className="w-80">
@@ -46,8 +64,14 @@ export default function Stay() {
           {/* IRORI */}
           <div className="flex items-center gap-12 justify-center">
             <div className="w-96">
-              <div className="bg-gray-300 h-64 rounded-lg flex items-center justify-center">
-                <span className="text-gray-600">IRORI Room Image</span>
+              <div className="h-64 rounded-lg overflow-hidden">
+                <Image
+                  src="/irori.JPG"
+                  alt="IRORI Room"
+                  width={384}
+                  height={256}
+                  className="w-full h-full object-cover"
+                />
               </div>
             </div>
             <div className="w-80">
@@ -59,6 +83,65 @@ export default function Stay() {
           </div>
         </div>
       </div>
+
+      {/* TableCheck予約フォーム - 右下からアニメーション */}
+      <AnimatePresence>
+        {showReservation && (
+          <motion.div
+            className="fixed bottom-6 right-6 z-50"
+            initial={{ 
+              x: 400, 
+              y: 300, 
+              opacity: 0,
+              scale: 0.8
+            }}
+            animate={{ 
+              x: 0, 
+              y: 0, 
+              opacity: 1,
+              scale: 1
+            }}
+            exit={{ 
+              x: 400, 
+              y: 300, 
+              opacity: 0,
+              scale: 0.8
+            }}
+            transition={{
+              type: "spring" as const,
+              damping: 25,
+              stiffness: 120,
+              duration: 0.8
+            }}
+          >
+            <div className="bg-white rounded-lg shadow-2xl border border-gray-200 overflow-hidden">
+              {/* ヘッダー */}
+              <div className="bg-black text-white px-4 py-3 flex justify-between items-center">
+                <h3 className="text-sm font-medium">RESERVATION</h3>
+                <button
+                  onClick={() => setShowReservation(false)}
+                  className="text-white hover:text-gray-300 text-lg"
+                  aria-label="予約フォームを閉じる"
+                >
+                  ×
+                </button>
+              </div>
+              
+              {/* iframe埋め込み */}
+              <div className="w-80 h-96">
+                <iframe
+                  src="https://www.tablecheck.com/ja/koki/reserve/message"
+                  width="100%"
+                  height="100%"
+                  frameBorder="0"
+                  title="KOKI Restaurant Reservation"
+                  className="border-0"
+                />
+              </div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 }
