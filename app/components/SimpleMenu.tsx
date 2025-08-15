@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { useRouter } from "next/navigation";
 
 interface SimpleMenuProps {
   onClose: () => void;
@@ -7,10 +8,12 @@ interface SimpleMenuProps {
 }
 
 export default function SimpleMenu({ onClose, onMenuSelect, isDark = false }: SimpleMenuProps) {
+  const router = useRouter();
+  
   const menuItems = [
     "RESERVATION",
-    "STAY", 
-    "ABOUT",
+    "STAY",
+    "ABOUT", 
     "INSTAGRAM",
     "MAP",
     "CONTACT"
@@ -29,6 +32,25 @@ export default function SimpleMenu({ onClose, onMenuSelect, isDark = false }: Si
       window.open("https://www.google.com/maps?sca_esv=a7578323760d0a7e&output=search&q=%E9%81%93%E5%BF%97%E6%9D%91+KOKI&source=lnms&fbs=AIIjpHxtp9HgFjMGFRTKn1bk5JXhQKJ-qNetcQnCHbceIMLcnM2HBhIcd5cpHhHkrq7_lRzBZKuzryIDkN2W3hVC2ddlxmCDos6W15MlDfo5mYtC31qSyvI4KbVJ1APf7EDeuOESqUH578pITAGp5eMonri-Sb5boL3k_fOfHKIKMvj_9PUB_Z1i_5GLlmOmijvwNFbO1siqcSzJj1zH86gU5psEE-L1rYzRpKF-fQNqlM-9a7vBUGE&entry=mc&ved=1t:200715&ictx=111", "_blank");
       return;
     }
+    
+    // 新しいルートにナビゲート
+    if (item === "STAY") {
+      onClose();
+      router.push("/stay");
+      return;
+    }
+    if (item === "ABOUT") {
+      onClose();
+      router.push("/about");
+      return;
+    }
+    if (item === "CONTACT") {
+      onClose();
+      router.push("/contact");
+      return;
+    }
+    
+    // 既存のメニュー表示機能（必要に応じて）
     onMenuSelect(item);
   };
 

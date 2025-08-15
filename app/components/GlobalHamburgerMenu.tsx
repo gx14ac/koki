@@ -1,22 +1,28 @@
 "use client";
 
 import { useState } from "react";
+import { usePathname } from "next/navigation";
 import { AnimatePresence } from "framer-motion";
 import HamburgerMenu from "./HamburgerMenu";
 import SimpleMenu from "./SimpleMenu";
 import Menu from "./Menu";
 
 export default function GlobalHamburgerMenu() {
+  const pathname = usePathname();
   const [showNavigation, setShowNavigation] = useState(false);
   const [showMenu, setShowMenu] = useState(false);
   const [selectedMenuItem, setSelectedMenuItem] = useState<string>("");
+
+  // ホームページ以外では常にダークモード（黒）にする
+  const isLightBackground = pathname !== '/';
+  const shouldBeDark = showMenu || isLightBackground;
 
   return (
     <>
       {/* ハンバーガーメニューボタン - 常に表示 */}
       <HamburgerMenu 
         isOpen={showNavigation} 
-        isDark={showMenu}
+        isDark={shouldBeDark}
         onClick={() => {
           if (showNavigation) {
             setShowNavigation(false);
@@ -38,7 +44,7 @@ export default function GlobalHamburgerMenu() {
                 setShowMenu(true);
               }
             }}
-            isDark={showMenu}
+            isDark={shouldBeDark}
           />
         )}
       </AnimatePresence>
