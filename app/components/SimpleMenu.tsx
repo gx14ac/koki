@@ -17,6 +17,18 @@ export default function SimpleMenu({ onClose, onMenuSelect, isDark = false }: Si
   ];
 
   const handleMenuSelect = (item: string) => {
+    if (item === "RESERVATION") {
+      window.open("https://www.tablecheck.com/ja/koki/reserve/message", "_blank");
+      return;
+    }
+    if (item === "INSTAGRAM") {
+      window.open("https://www.instagram.com/aubergekoki/", "_blank");
+      return;
+    }
+    if (item === "MAP") {
+      window.open("https://www.google.com/maps?sca_esv=a7578323760d0a7e&output=search&q=%E9%81%93%E5%BF%97%E6%9D%91+KOKI&source=lnms&fbs=AIIjpHxtp9HgFjMGFRTKn1bk5JXhQKJ-qNetcQnCHbceIMLcnM2HBhIcd5cpHhHkrq7_lRzBZKuzryIDkN2W3hVC2ddlxmCDos6W15MlDfo5mYtC31qSyvI4KbVJ1APf7EDeuOESqUH578pITAGp5eMonri-Sb5boL3k_fOfHKIKMvj_9PUB_Z1i_5GLlmOmijvwNFbO1siqcSzJj1zH86gU5psEE-L1rYzRpKF-fQNqlM-9a7vBUGE&entry=mc&ved=1t:200715&ictx=111", "_blank");
+      return;
+    }
     onMenuSelect();
   };
 
@@ -30,10 +42,10 @@ export default function SimpleMenu({ onClose, onMenuSelect, isDark = false }: Si
       x: 0,
       opacity: 1,
       transition: {
-        type: "spring",
+        type: "spring" as const,
         damping: 25,
         stiffness: 120,
-        duration: 0.6,
+        duration: 0.2,
         staggerChildren: 0.1
       }
     },
@@ -41,7 +53,7 @@ export default function SimpleMenu({ onClose, onMenuSelect, isDark = false }: Si
       x: "100%",
       opacity: 0,
       transition: {
-        type: "spring",
+        type: "spring" as const,
         damping: 30,
         stiffness: 150,
         duration: 0.4
@@ -55,7 +67,7 @@ export default function SimpleMenu({ onClose, onMenuSelect, isDark = false }: Si
       opacity: 1, 
       x: 0,
       transition: {
-        type: "spring",
+        type: "spring" as const,
         damping: 20,
         stiffness: 100
       }
