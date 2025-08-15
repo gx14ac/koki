@@ -1,0 +1,198 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: 'Avenir', 'Avenir Next', var(--font-inter), -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: 'Avenir', 'Avenir Next', var(--font-inter), -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+}
+
+/* 波のアニメーション */
+@keyframes wave1 {
+  0%, 100% { transform: translateX(-100%) translateY(10px) rotate(0deg); }
+  50% { transform: translateX(100vw) translateY(-10px) rotate(180deg); }
+}
+
+@keyframes wave2 {
+  0%, 100% { transform: translateX(100vw) translateY(-5px) rotate(180deg); }
+  50% { transform: translateX(-100%) translateY(15px) rotate(360deg); }
+}
+
+@keyframes wave3 {
+  0%, 100% { transform: translateX(-50%) translateY(0px) rotate(90deg); }
+  50% { transform: translateX(150vw) translateY(-20px) rotate(270deg); }
+}
+
+.wave {
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(45deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05));
+  border-radius: 50%;
+  filter: blur(2px);
+}
+
+.wave-1 {
+  animation: wave1 20s infinite linear;
+  top: 10%;
+  left: -50%;
+}
+
+.wave-2 {
+  animation: wave2 25s infinite linear;
+  top: 30%;
+  left: -50%;
+  background: linear-gradient(45deg, rgba(255,255,255,0.08), rgba(255,255,255,0.03));
+}
+
+.wave-3 {
+  animation: wave3 30s infinite linear;
+  top: 60%;
+  left: -50%;
+  background: linear-gradient(45deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
+}
+
+/* より滑らかな浮上アニメーション */
+@keyframes smoothRise {
+  0% {
+    transform: scale(0.8) translateY(60px);
+    opacity: 0;
+    filter: blur(10px);
+    backdrop-filter: blur(0px);
+  }
+  25% {
+    transform: scale(0.9) translateY(40px);
+    opacity: 0.3;
+    filter: blur(8px);
+    backdrop-filter: blur(5px);
+  }
+  50% {
+    transform: scale(0.95) translateY(20px);
+    opacity: 0.6;
+    filter: blur(5px);
+    backdrop-filter: blur(10px);
+  }
+  75% {
+    transform: scale(0.98) translateY(8px);
+    opacity: 0.8;
+    filter: blur(2px);
+    backdrop-filter: blur(15px);
+  }
+  100% {
+    transform: scale(1) translateY(0);
+    opacity: 0.95;
+    filter: blur(0px);
+    backdrop-filter: blur(20px);
+  }
+}
+
+@keyframes smoothSink {
+  0% {
+    transform: scale(1) translateY(0);
+    opacity: 0.95;
+    filter: blur(0px);
+    backdrop-filter: blur(20px);
+  }
+  25% {
+    transform: scale(0.98) translateY(8px);
+    opacity: 0.8;
+    filter: blur(2px);
+    backdrop-filter: blur(15px);
+  }
+  50% {
+    transform: scale(0.95) translateY(20px);
+    opacity: 0.6;
+    filter: blur(5px);
+    backdrop-filter: blur(10px);
+  }
+  75% {
+    transform: scale(0.9) translateY(40px);
+    opacity: 0.3;
+    filter: blur(8px);
+    backdrop-filter: blur(5px);
+  }
+  100% {
+    transform: scale(0.8) translateY(60px);
+    opacity: 0;
+    filter: blur(10px);
+    backdrop-filter: blur(0px);
+  }
+}
+
+.slide-in-from-back {
+  animation: smoothRise 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  background: rgba(255, 255, 255, 0.7) !important;
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+}
+
+.slide-out-to-back {
+  animation: smoothSink 0.5s cubic-bezier(0.7, 0, 0.84, 0) forwards;
+  background: rgba(255, 255, 255, 0.7) !important;
+  backdrop-filter: blur(20px);
+}
+
+/* 水の波紋効果 */
+@keyframes ripple {
+  0% {
+    transform: scale(0);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+
+.water-ripple {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255,255,255,0.4) 0%, rgba(255,255,255,0.1) 50%, transparent 100%);
+  pointer-events: none;
+  animation: ripple 1.2s ease-out;
+}
+
+/* 水滴効果 */
+@keyframes droplet {
+  0% {
+    transform: translateY(-20px) scale(0);
+    opacity: 0;
+  }
+  50% {
+    transform: translateY(0) scale(1);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(20px) scale(0.5);
+    opacity: 0;
+  }
+}
+
+.water-droplet {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background: rgba(255,255,255,0.6);
+  border-radius: 50%;
+  pointer-events: none;
+  animation: droplet 0.8s ease-out;
+}
