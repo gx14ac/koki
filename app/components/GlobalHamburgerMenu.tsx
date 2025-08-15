@@ -9,6 +9,7 @@ import Menu from "./Menu";
 export default function GlobalHamburgerMenu() {
   const [showNavigation, setShowNavigation] = useState(false);
   const [showMenu, setShowMenu] = useState(false);
+  const [selectedMenuItem, setSelectedMenuItem] = useState<string>("");
 
   return (
     <>
@@ -30,7 +31,8 @@ export default function GlobalHamburgerMenu() {
         {showNavigation && (
           <SimpleMenu 
             onClose={() => setShowNavigation(false)}
-            onMenuSelect={() => {
+            onMenuSelect={(item) => {
+              setSelectedMenuItem(item);
               setShowNavigation(false);
               if (!showMenu) {
                 setShowMenu(true);
@@ -44,7 +46,13 @@ export default function GlobalHamburgerMenu() {
       {/* メニュー画面 */}
       <AnimatePresence>
         {showMenu && (
-          <Menu onClose={() => setShowMenu(false)} />
+          <Menu 
+            onClose={() => {
+              setShowMenu(false);
+              setSelectedMenuItem("");
+            }} 
+            selectedMenuItem={selectedMenuItem}
+          />
         )}
       </AnimatePresence>
     </>
