@@ -9,7 +9,7 @@ const variants = {
     y: 0, 
     filter: "blur(0px)",
     transition: {
-      type: 'spring',
+      type: 'spring' as const,
       damping: 25,
       stiffness: 120,
       duration: 1.2,
