@@ -132,6 +132,7 @@ export default function SimpleMenu({ onClose, onMenuSelect, isDark = false }: Si
                     ? 'text-black hover:text-gray-600' 
                     : 'text-white hover:text-gray-300'
                 }`}
+                onClick={() => handleMenuSelect(item)}
                 whileTap={{ scale: 0.95 }}
               >
                 {item}
