@@ -20,9 +20,9 @@ export default function Contact() {
         </Link>
       </div>
       
-      {/* タイトル - 上中央に配置 */}
-      <div className="absolute top-20 left-1/2 transform -translate-x-1/2 z-10">
-        <h1 className="text-4xl font-light text-black tracking-wide">CONTACT</h1>
+      {/* タイトル - 固定位置で上中央に配置 */}
+      <div className="fixed top-16 left-1/2 transform -translate-x-1/2 z-20">
+        <h1 className="text-2xl md:text-4xl font-light text-black tracking-wide">CONTACT</h1>
       </div>
       
       {/* コンテンツエリア - 全体画面で中央配置 */}
