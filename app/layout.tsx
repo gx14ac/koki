@@ -21,6 +21,10 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: "Auberge Koki",
   description: "山を扱く、なにもないようでなんでもある。二十四節気の記憶を耕す。",
+  keywords: ["オーベルジュ", "宿泊", "レストラン", "山梨", "自然", "料理"],
+  authors: [{ name: "Auberge Koki" }],
+  creator: "Auberge Koki",
+  publisher: "Auberge Koki",
   openGraph: {
     title: "Auberge Koki",
     description: "山を扱く、なにもないようでなんでもある。二十四節気の記憶を耕す。",
@@ -28,7 +32,7 @@ export const metadata: Metadata = {
     siteName: "Auberge Koki",
     images: [
       {
-        url: "https://aubergekoki.com/koki-white.png",
+        url: "/ogp.png",
         width: 1200,
         height: 630,
         alt: "Auberge KOKI",
@@ -41,7 +45,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Auberge KOKI",
     description: "山を扱く、なにもないようでなんでもある。二十四節気の記憶を耕す。",
-    images: ["https://aubergekoki.com/koki-white.png"],
+    images: ["/ogp.png"],
   },
   robots: {
     index: true,

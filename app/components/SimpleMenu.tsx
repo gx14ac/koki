@@ -16,7 +16,6 @@ export default function SimpleMenu({ onClose, onMenuSelect, isDark = false }: Si
     "ABOUT", 
     "INSTAGRAM",
     "MAP",
-    "CONTACT"
   ];
 
   const handleMenuSelect = (item: string) => {
@@ -44,12 +43,7 @@ export default function SimpleMenu({ onClose, onMenuSelect, isDark = false }: Si
       router.push("/about");
       return;
     }
-    if (item === "CONTACT") {
-      onClose();
-      router.push("/contact");
-      return;
-    }
-    
+
     // 既存のメニュー表示機能（必要に応じて）
     onMenuSelect(item);
   };

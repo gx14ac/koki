@@ -1,5 +1,14 @@
 @import "tailwindcss";
 
+/* カスタムフォントの定義 */
+@font-face {
+  font-family: 'Helvetica Regular';
+  src: url('/Helvetica-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -8,7 +17,7 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: 'Avenir', 'Avenir Next', var(--font-inter), -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+  --font-sans: 'Helvetica Regular', 'Helvetica', 'Helvetica Neue', Arial, sans-serif;
   --font-mono: var(--font-geist-mono);
 }
 
@@ -22,7 +31,8 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: 'Avenir', 'Avenir Next', var(--font-inter), -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+  font-family: 'Helvetica Regular', 'Helvetica', 'Helvetica Neue', Arial, sans-serif;
+  font-weight: 400;
 }
 
 /* 波のアニメーション */

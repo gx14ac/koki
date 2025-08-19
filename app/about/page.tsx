@@ -32,7 +32,15 @@ export default function About() {
           <div className="flex justify-center items-center gap-24">
             {/* 左側 - Auberge KOKI情報 */}
             <div className="flex flex-col space-y-8">
-              <h2 className="text-2xl font-light text-black mb-8">Auberge KOKI</h2>
+              <div className="mb-8">
+                <Image
+                  src="/about_logo.png"
+                  alt="Auberge KOKI"
+                  width={200}
+                  height={80}
+                  className="object-contain"
+                />
+              </div>
               
               <div className="space-y-6">
                 <div className="flex items-start">
