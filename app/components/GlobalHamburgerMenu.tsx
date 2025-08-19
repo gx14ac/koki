@@ -6,6 +6,7 @@ import { AnimatePresence } from "framer-motion";
 import HamburgerMenu from "./HamburgerMenu";
 import SimpleMenu from "./SimpleMenu";
 import Menu from "./Menu";
+import LocaleButton from "./LocaleButton";
 
 export default function GlobalHamburgerMenu() {
   const pathname = usePathname();
@@ -19,6 +20,9 @@ export default function GlobalHamburgerMenu() {
 
   return (
     <>
+      {/* ローカライズボタン */}
+      <LocaleButton isDark={shouldBeDark} />
+      
       {/* ハンバーガーメニューボタン - 常に表示 */}
       <HamburgerMenu 
         isOpen={showNavigation} 
