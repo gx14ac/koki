@@ -5,8 +5,8 @@ import Link from "next/link";
 import { useLocale } from "../contexts/LocaleContext";
 
 export default function Stay() {
-  const { t } = useLocale();
-  
+  const { t, locale } = useLocale();
+
   return (
     <div className="font-sans min-h-screen relative" style={{ backgroundColor: 'rgb(238, 234, 228)' }}>
       {/* KOKIロゴ - 左上に配置 */}
@@ -25,58 +25,14 @@ export default function Stay() {
       
       {/* タイトル - 固定位置で上中央に配置 */}
       <div className="fixed top-16 left-1/2 transform -translate-x-1/2 z-20">
-        <h1 className="text-2xl md:text-4xl font-light text-black tracking-wide">{t('stay.title')}</h1>
+                <h1 className="text-2xl md:text-4xl font-light text-black tracking-wide">{t('stay.title')}</h1>
       </div>
       
       {/* コンテンツエリア - 全体画面で中央配置 */}
-      <div className="w-full flex flex-col items-center justify-center pt-64">
-        <div className="w-full max-w-5xl px-8">
-          {/* KINOMA */}
-          <div className="mb-16 flex items-center gap-12 justify-center">
-            <div className="w-[500px]">
-              <div className="h-80 overflow-hidden">
-                <Image
-                  src="/kinoma.JPG"
-                  alt="KINOMA Room"
-                  width={800}
-                  height={1000}
-                  className="w-full h-full object-cover"
-                />
-              </div>
-            </div>
-            <div className="w-80">
-              <h3 className="text-2xl font-light mb-4 text-black">{t('stay.kinoma.title')}</h3>
-              <p className="text-sm text-gray-700 mb-2">{t('stay.kinoma.description')}</p>
-              <p className="text-sm text-gray-700 mb-4">{t('stay.kinoma.description.jp')}</p>
-              <p className="text-sm text-black">{t('stay.price')}</p>
-            </div>
-          </div>
-          
-          {/* IRORI */}
-          <div className="flex items-center gap-12 justify-center">
-            <div className="w-[500px]">
-              <div className="h-80 overflow-hidden">
-                <Image
-                  src="/irori.JPG"
-                  alt="IRORI Room"
-                  width={400}
-                  height={600}
-                  className="w-full h-full object-cover"
-                />
-              </div>
-            </div>
-            <div className="w-80">
-              <h3 className="text-2xl font-light mb-4 text-black">{t('stay.irori.title')}</h3>
-              <p className="text-sm text-gray-700 mb-2">{t('stay.irori.description')}</p>
-              <p className="text-sm text-gray-700 mb-4">{t('stay.irori.description.jp')}</p>
-              <p className="text-sm text-black">{t('stay.price')}</p>
-            </div>
-          </div>
-        </div>
-      </div>
+      <div className="w-full flex flex-col items-center justify-center pt-48">
 
       {/* KINOMA 詳細セクション */}
-        <div className="w-full mx-auto mt-16 px-8 py-16">
+        <div className="w-full mx-auto px-8 py-8">
           {/* KINOMAタイトルとテキスト情報 */}
           <div className="text-center mb-6">
                          <h3 className="text-3xl font-light mb-8 text-black">{t('stay.kinoma.title')}</h3>
@@ -164,7 +120,7 @@ export default function Stay() {
             </div>
           </div>
       </div>
-      
+      </div>
     </div>
   );
 }

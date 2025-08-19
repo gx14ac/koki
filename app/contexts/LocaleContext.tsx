@@ -88,7 +88,9 @@ export function LocaleProvider({ children }: { children: ReactNode }) {
   const [locale, setLocale] = useState<Locale>('EN');
 
   const t = (key: string): string => {
-    return translations[locale][key as keyof typeof translations[typeof locale]] || key;
+    const translation = translations[locale][key as keyof typeof translations[typeof locale]];
+    console.log(`Translation for "${key}" in ${locale}:`, translation || `[MISSING: ${key}]`);
+    return translation || key;
   };
 
   return (

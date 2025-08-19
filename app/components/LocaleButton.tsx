@@ -10,7 +10,9 @@ export default function LocaleButton({ isDark = false }: LocaleButtonProps) {
   const { locale, setLocale } = useLocale();
 
   const toggleLocale = () => {
-    setLocale(locale === 'EN' ? 'JP' : 'EN');
+    const newLocale = locale === 'EN' ? 'JP' : 'EN';
+    console.log('Switching locale from', locale, 'to', newLocale);
+    setLocale(newLocale);
   };
 
   return (
