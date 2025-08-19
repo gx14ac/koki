@@ -19,7 +19,6 @@ export default function Home() {
 
       {/* KOKI ロゴを中央に配置 */}
       <div className="relative z-20 flex flex-col items-center justify-center min-h-screen">
-        <Link href="/about" className="transition-transform">
           <Image
             src="/koki-white.png"
             alt="KOKI"
@@ -28,9 +27,7 @@ export default function Home() {
             priority
             className="drop-shadow-2xl w-32 h-auto md:w-[150px] md:h-auto"
           />
-        </Link>
       </div>
-
     </div>
   );
 }
