@@ -25,7 +25,7 @@ export default function Reservation() {
       </div>
       
       {/* 料金・プランセクション（画像のレイアウトを再現） */}
-      <section className="w-full text-black pt-28 md:pt-32 flex-1">
+      <section className="w-full text-black pt-32 md:pt-36 flex-1">
         <div className="max-w-[1600px] mx-auto pr-6 md:pr-10 pl-0 md:pl-1 lg:pl-2 pb-10 md:pb-14">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-32 lg:gap-48 xl:gap-64 -ml-2 lg:-ml-26">
             {/* 左カラム：左レール見出し（DINNER）＋ コンテンツ */}
@@ -67,14 +67,25 @@ export default function Reservation() {
                   <p className="text-[14px] md:text-[15px] text-black mt-4">※ 価格表記は全て税込価格、サービス料は別になります。</p>
 
                   {/* RESERVATION */}
-                  <h2 className="text-[26px] tracking-wide mt-24 mb-8 inline-block border-b border-gray-500 pb-2">RESERVATION</h2>
-                  <div className="space-y-4">
+                  <h2 className="text-[26px] tracking-wide mt-24 mb-10 inline-block border-b border-gray-500 pb-2">RESERVATION</h2>
+                  <div className="space-y-6">
                     <div>
                       <p>お電話でのご予約</p>
-                      <p>0554-52-2781</p>
+                      <p>
+                        <a href="tel:0554522781" className="underline hover:no-underline">0554-52-2781</a>
+                      </p>
                     </div>
                     <div>
-                      <p>TableCheckでのご予約</p>
+                      <p>
+                        <a
+                          href="https://www.tablecheck.com/ja/shops/koki/reserve?fbclid=PARlRTSAMyJAtleHRuA2FlbQIxMQABp-AmKhUpCPKtRZyduRntuUCn-tBNhQTTz53HNAcEdG8zr7iuStEJ-3E3OBou_aem_Cwsx_39V0CAJwx-WIB_AYg"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="underline hover:no-underline"
+                        >
+                          TableCheckでのご予約
+                        </a>
+                      </p>
                       <div className="w-10 h-px bg-gray-500 my-8" />
                     </div>
                     <div className="space-y-">

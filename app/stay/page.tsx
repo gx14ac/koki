@@ -46,7 +46,7 @@ export default function Stay() {
       </div>
       
       {/* コンテンツエリア - 全体画面で中央配置 */}
-      <div className="w-full flex flex-col items-center justify-center pt-30 flex-1">
+      <div className="w-full flex flex-col items-center justify-center pt-40 md:pt-48 flex-1">
 
       {/* KINOMA 詳細セクション */}
         <div className="w-full mx-auto px-8 py-8">
