@@ -20,6 +20,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://aubergekoki.com"),
   title: "Auberge Koki",
   description: "山を扱く、なにもないようでなんでもある。二十四節気の記憶を耕す。",
   keywords: ["オーベルジュ", "宿泊", "レストラン", "山梨", "自然", "料理"],
@@ -51,7 +52,7 @@ export const metadata: Metadata = {
   robots: {
     index: true,
     follow: true,
-  }
+  },
 };
 
 export default function RootLayout({
