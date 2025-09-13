@@ -6,7 +6,6 @@ import { AnimatePresence } from "framer-motion";
 import HamburgerMenu from "./HamburgerMenu";
 import SimpleMenu from "./SimpleMenu";
 import Menu from "./Menu";
-import LocaleButton from "./LocaleButton";
 
 export default function GlobalHamburgerMenu() {
   const pathname = usePathname();
@@ -18,11 +17,12 @@ export default function GlobalHamburgerMenu() {
   const isLightBackground = pathname !== '/';
   const shouldBeDark = showMenu || isLightBackground;
 
+  // 対象ページでメニューを開いた時にブラーを当てる
+  const blurEligiblePaths = ["/reservation", "/stay", "/contact", "/about"];
+  const shouldShowBackdrop = showNavigation && blurEligiblePaths.some((p) => pathname.startsWith(p));
+
   return (
     <>
-      {/* ローカライズボタン */}
-      <LocaleButton isDark={shouldBeDark} />
-      
       {/* ハンバーガーメニューボタン - 常に表示 */}
       <HamburgerMenu 
         isOpen={showNavigation} 
@@ -35,6 +35,14 @@ export default function GlobalHamburgerMenu() {
           }
         }} 
       />
+
+      {/* 背景ブラー用オーバーレイ（メニューの背面に表示） */}
+      {shouldShowBackdrop && (
+        <div
+          className="fixed inset-0 z-[180] bg-black/10 backdrop-blur-[2px] md:backdrop-blur-[3px] transition-opacity duration-300"
+          aria-hidden="true"
+        />
+      )}
       
       {/* シンプルメニュー */}
       <AnimatePresence>

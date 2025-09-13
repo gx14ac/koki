@@ -1,0 +1,69 @@
+"use client";
+
+import Image from "next/image";
+import Link from "next/link";
+import SectionBar from "../components/SectionBar";
+
+export default function Contact() {
+
+  return (
+    <div className="font-sans min-h-screen relative flex flex-col">
+      {/* KOKIロゴ - 左上に配置 */}
+      <div className="absolute top-12 left-16 lg:left-20 z-10">
+        <Link href="/" className="transition-transform hover:scale-105">
+          <Image
+            src="/koki_logo_basic_white.png"
+            alt="KOKI"
+            width={120}
+            height={160}
+            priority
+            className="filter invert"
+          />
+        </Link>
+      </div>
+      
+      {/* コンテンツエリア */}
+      <div className="w-full flex items-center justify-center flex-1">
+        <div className="w-full max-w-6xl px-6 md:px-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-12 items-start">
+            {/* 左側 - タイトル（画像） */}
+            <div className="flex items-start md:justify-start justify-center">
+              <Image
+                src="/auberge_koki.png"
+                alt="Auberge KOKI"
+                width={280}
+                height={120}
+                className="object-contain block"
+                priority
+              />
+            </div>
+            
+            {/* 右側 - 連絡先情報 */}
+            <div className="text-black self-start pt-4">
+              <div className="grid grid-cols-[120px_1fr] gap-y-6 gap-x-8 text-lg md:text-xl">
+                <span className="font-medium">MAIL</span>
+                <a href="mailto:aubergekoki@gmail.com" className="underline hover:no-underline">aubergekoki@gmail.com</a>
+
+                <span className="font-medium">TEL</span>
+                <a href="tel:0554522781" className="underline hover:no-underline">0554-52-2781</a>
+
+                <span className="font-medium">Instagram</span>
+                <a href="https://www.instagram.com/aubergekoki/" target="_blank" rel="noopener noreferrer" className="underline hover:no-underline">@aubergekoki</a>
+
+                <span className="font-medium">Address</span>
+                <div>
+                  <div>〒402-0213</div>
+                  <div>山梨県南都留郡道志村谷相7383-2</div>
+                  <div className="mt-3">
+                    <a href="https://maps.app.goo.gl/wzpyAXsDesZ4mmiq9?g_st=ic" target="_blank" rel="noopener noreferrer" className="underline hover:no-underline">Google Map</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <SectionBar variant="more-left" />
+    </div>
+  );
+}

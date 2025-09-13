@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { useRouter } from "next/navigation";
+import LocaleButton from "./LocaleButton";
 
 interface SimpleMenuProps {
   onClose: () => void;
@@ -14,13 +15,15 @@ export default function SimpleMenu({ onClose, onMenuSelect, isDark = false }: Si
     "RESERVATION",
     "STAY",
     "ABOUT", 
-    "INSTAGRAM",
+    "CONTACT", 
     "MAP",
+    "INSTAGRAM",
   ];
 
   const handleMenuSelect = (item: string) => {
     if (item === "RESERVATION") {
-      window.open("https://www.tablecheck.com/ja/koki/reserve/message", "_blank");
+      onClose();
+      router.push("/reservation");
       return;
     }
     if (item === "INSTAGRAM") {
@@ -28,7 +31,7 @@ export default function SimpleMenu({ onClose, onMenuSelect, isDark = false }: Si
       return;
     }
     if (item === "MAP") {
-      window.open("https://www.google.com/maps?sca_esv=a7578323760d0a7e&output=search&q=%E9%81%93%E5%BF%97%E6%9D%91+KOKI&source=lnms&fbs=AIIjpHxtp9HgFjMGFRTKn1bk5JXhQKJ-qNetcQnCHbceIMLcnM2HBhIcd5cpHhHkrq7_lRzBZKuzryIDkN2W3hVC2ddlxmCDos6W15MlDfo5mYtC31qSyvI4KbVJ1APf7EDeuOESqUH578pITAGp5eMonri-Sb5boL3k_fOfHKIKMvj_9PUB_Z1i_5GLlmOmijvwNFbO1siqcSzJj1zH86gU5psEE-L1rYzRpKF-fQNqlM-9a7vBUGE&entry=mc&ved=1t:200715&ictx=111", "_blank");
+      window.open("https://maps.app.goo.gl/wzpyAXsDesZ4mmiq9?g_st=ipc", "_blank");
       return;
     }
     
@@ -41,6 +44,11 @@ export default function SimpleMenu({ onClose, onMenuSelect, isDark = false }: Si
     if (item === "ABOUT") {
       onClose();
       router.push("/about");
+      return;
+    }
+    if (item === "CONTACT") {
+      onClose();
+      router.push("/contact");
       return;
     }
 
@@ -90,6 +98,19 @@ export default function SimpleMenu({ onClose, onMenuSelect, isDark = false }: Si
     }
   };
 
+  const InstagramIcon = ({ className = "" }: { className?: string }) => (
+    <svg
+      viewBox="0 0 24 24"
+      xmlns="http://www.w3.org/2000/svg"
+      className={className}
+      aria-hidden="true"
+    >
+      <rect x="2" y="2" width="20" height="20" rx="5" ry="5" stroke="currentColor" strokeWidth="2" fill="none" />
+      <circle cx="12" cy="12" r="4" stroke="currentColor" strokeWidth="2" fill="none" />
+      <circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" />
+    </svg>
+  );
+
   return (
     <motion.div 
       className="fixed inset-0 z-[200]"
@@ -118,20 +139,44 @@ export default function SimpleMenu({ onClose, onMenuSelect, isDark = false }: Si
             variants={containerVariants}
           >
             {menuItems.map((item, index) => (
-              <motion.button
-                key={item}
-                variants={itemVariants}
-                className={`block text-right text-xl lg:text-2xl font-light tracking-wide transition-all duration-300 hover:scale-105 ${
-                  isDark 
-                    ? 'text-black hover:text-gray-600' 
-                    : 'text-white hover:text-gray-300'
-                }`}
-                onClick={() => handleMenuSelect(item)}
-                whileTap={{ scale: 0.95 }}
-              >
-                {item}
-              </motion.button>
+              item === 'INSTAGRAM' ? (
+                <motion.a
+                  key={item}
+                  variants={itemVariants}
+                  className={`block text-left text-xl lg:text-2xl font-light tracking-wide transition-all duration-300 hover:scale-101 ${
+                    isDark 
+                      ? 'text-black hover:text-gray-600' 
+                      : 'text-white hover:text-gray-300'
+                  }`}
+                  href="https://www.instagram.com/aubergekoki/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  whileTap={{ scale: 0.04 }}
+                  aria-label="Open Instagram"
+                >
+                  <span className="inline-flex items-center justify-start w-full">
+                    <InstagramIcon className="w-7 h-7 lg:w-8 lg:h-8" />
+                  </span>
+                </motion.a>
+              ) : (
+                <motion.button
+                  key={item}
+                  variants={itemVariants}
+                  className={`block text-right text-xl lg:text-2xl font-light tracking-wide transition-all duration-300 hover:scale-105 ${
+                    isDark 
+                      ? 'text-black hover:text-gray-600' 
+                      : 'text-white hover:text-gray-300'
+                  }`}
+                  onClick={() => handleMenuSelect(item)}
+                  whileTap={{ scale: 0.1 }}
+                >
+                  {item}
+                </motion.button>
+              )
             ))}
+        <div className="pt-16">
+            <LocaleButton isDark={isDark} variant="menu" />
+            </div>
           </motion.nav>
         </div>
       </div>

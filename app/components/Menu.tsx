@@ -98,10 +98,8 @@ export default function Menu({ onClose, selectedMenuItem }: MenuProps) {
                       </div>
                     </div>
                     <div className="w-80">
-                      <h3 className="text-2xl font-light mb-4 text-black">KINOMA</h3>
+                      <h3 className="text-2xl font-light mb-4 text-black">KoNOMA</h3>
                       <p className="text-sm text-gray-700 mb-2">00 sqm / Maximum 2 persons / 2 semi double sized bunk bed</p>
-                      <p className="text-sm text-gray-700 mb-4">00㎡ / 1-2名 / ベッド2台</p>
-                      <p className="text-sm text-black">Price: ¥00,000</p>
                     </div>
                   </div>
                   

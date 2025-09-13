@@ -25,14 +25,12 @@ const translations = {
     
     // Stayページ
     'stay.title': 'STAY',
-    'stay.kinoma.title': 'KINOMA',
+    'stay.kinoma.title': 'KONOMA',
     'stay.irori.title': 'IRORI',
-    'stay.kinoma.description': '00 sqm / Maximum 3 persons / 2 semi double sized bunk bed',
-    'stay.kinoma.description.jp': '00㎡ / 1-3名 / ベッド2台',
-    'stay.irori.description': '00 sqm / Maximum 3 persons / 2 semi double sized bunk bed',
-    'stay.irori.description.jp': '00㎡ / 1-3名 / ベッド2台',
-    'stay.price': 'Price: ¥00,000',
-    'stay.reservation': 'Reservation',
+    'stay.kinoma.concept.jp': 'ワンルームの広々としたお部屋',
+    'stay.kinoma.description.jp': '37㎡ / 1-3名 / セミダブルベッド2台 / ソファベッド1台',
+    'stay.irori.concept.jp': '囲炉裏とウッドデッキ付きのお部屋',
+    'stay.irori.description.jp': '',
     
     // Aboutページ
     'about.title': 'Auberge KOKI',
@@ -59,14 +57,12 @@ const translations = {
     
     // Stayページ
     'stay.title': 'STAY',
-    'stay.kinoma.title': 'KINOMA',
+    'stay.kinoma.title': 'KONOMA',
     'stay.irori.title': 'IRORI',
-    'stay.kinoma.description': '00 sqm / Maximum 3 persons / 2 semi double sized bunk bed',
-    'stay.kinoma.description.jp': '00㎡ / 1-3名 / ベッド2台',
-    'stay.irori.description': '00 sqm / Maximum 3 persons / 2 semi double sized bunk bed',
-    'stay.irori.description.jp': '00㎡ / 1-3名 / ベッド2台',
-    'stay.price': 'Price: ¥00,000',
-    'stay.reservation': '予約',
+    'stay.kinoma.concept.jp': 'ワンルームの広々としたお部屋',
+    'stay.kinoma.description.jp': '37㎡ / 1-3名 / セミダブルベッド2台 / ソファベッド1台',
+    'stay.irori.concept.jp': '囲炉裏とウッドデッキ付きのお部屋',
+    'stay.irori.description.jp': '',
     
     // Aboutページ
     'about.title': 'オーベルジュ KOKI',

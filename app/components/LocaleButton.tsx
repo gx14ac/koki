@@ -4,28 +4,46 @@ import { useLocale } from "../contexts/LocaleContext";
 
 interface LocaleButtonProps {
   isDark?: boolean;
+  variant?: "fixed" | "menu";
+  className?: string;
 }
 
-export default function LocaleButton({ isDark = false }: LocaleButtonProps) {
+export default function LocaleButton({ isDark = false, variant = "fixed", className = "" }: LocaleButtonProps) {
   const { locale, setLocale } = useLocale();
 
-  const toggleLocale = () => {
-    const newLocale = locale === 'EN' ? 'JP' : 'EN';
-    console.log('Switching locale from', locale, 'to', newLocale);
-    setLocale(newLocale);
-  };
+  const wrapperClasses = variant === "fixed"
+    ? "fixed top-4 right-24 md:top-10 md:right-32 z-[250] text-sm md:text-base font-medium"
+    : "block text-left font-light tracking-wide";
+
+  const colorClasses = isDark 
+    ? "text-black hover:text-gray-600"
+    : "text-white hover:text-gray-200";
+
+  const inactiveOpacity = isDark ? "opacity-80" : "opacity-90";
 
   return (
-    <button
-      onClick={toggleLocale}
-      className={`fixed top-4 right-24 md:top-10 md:right-32 z-[250] w-12 h-16 md:w-16 md:h-20 flex items-center justify-center text-sm font-medium transition-all duration-300 hover:scale-105 ${
-        isDark 
-          ? 'text-black hover:text-gray-600' 
-          : 'text-white hover:text-gray-200'
-      }`}
-      aria-label={`Switch to ${locale === 'EN' ? 'Japanese' : 'English'}`}
-    >
-      {locale}
-    </button>
+    <div className={`${wrapperClasses} ${className}`} aria-label="Language selector">
+      <div className={`inline-flex items-center select-none`}>
+        <button
+          type="button"
+          onClick={() => setLocale('JP')}
+          className={`px-1 border-b-2 pb-0.5 transition-colors duration-200 ${colorClasses} ${locale === 'JP' ? 'border-current' : `border-transparent ${inactiveOpacity}`}`}
+          aria-pressed={locale === 'JP'}
+          aria-label="Switch to Japanese"
+        >
+          JP
+        </button>
+        <span className={`mx-1 w-px h-[1.4em] md:h-[1.2em] ${isDark ? 'bg-black/70' : 'bg-white/70'}`} aria-hidden="true" />
+        <button
+          type="button"
+          onClick={() => setLocale('EN')}
+          className={`px-1 border-b-2 pb-0.5 transition-colors duration-200 ${colorClasses} ${locale === 'EN' ? 'border-current' : `border-transparent ${inactiveOpacity}`}`}
+          aria-pressed={locale === 'EN'}
+          aria-label="Switch to English"
+        >
+          EN
+        </button>
+      </div>
+    </div>
   );
 }

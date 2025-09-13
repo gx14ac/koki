@@ -10,7 +10,7 @@
 }
 
 :root {
-  --background: #ffffff;
+  --background: rgb(245, 245, 245);
   --foreground: #171717;
 }
 
@@ -21,15 +21,18 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
+/* ダークモードの自動切り替えを無効化（常に同一背景にする） */
+/* @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
   }
-}
+} */
+
+html { background: rgb(245, 245, 245); }
 
 body {
-  background: var(--background);
+  background: rgb(245, 245, 245);
   color: var(--foreground);
   font-family: 'Helvetica Regular', 'Helvetica', 'Helvetica Neue', Arial, sans-serif;
   font-weight: 400;
