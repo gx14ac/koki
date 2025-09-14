@@ -27,6 +27,9 @@ export const metadata: Metadata = {
   authors: [{ name: "Auberge Koki" }],
   creator: "Auberge Koki",
   publisher: "Auberge Koki",
+  icons: {
+    icon: "/ogp.png",
+  },
   openGraph: {
     title: "Auberge Koki",
     description: "山を扱く、なにもないようでなんでもある。二十四節気の記憶を耕す。",
