@@ -33,16 +33,6 @@ export default function LocaleButton({ isDark = false, variant = "fixed", classN
         >
           JP
         </button>
-        <span className={`mx-1 w-px h-[1.4em] md:h-[1.2em] ${isDark ? 'bg-black/70' : 'bg-white/70'}`} aria-hidden="true" />
-        <button
-          type="button"
-          onClick={() => setLocale('EN')}
-          className={`px-1 border-b-2 pb-0.5 transition-colors duration-200 ${colorClasses} ${locale === 'EN' ? 'border-current' : `border-transparent ${inactiveOpacity}`}`}
-          aria-pressed={locale === 'EN'}
-          aria-label="Switch to English"
-        >
-          EN
-        </button>
       </div>
     </div>
   );

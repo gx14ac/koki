@@ -30,7 +30,7 @@ const translations = {
     'stay.kinoma.concept.jp': 'ワンルームの広々としたお部屋',
     'stay.kinoma.description.jp': '37㎡ / 1-3名 / セミダブルベッド2台 / ソファベッド1台',
     'stay.irori.concept.jp': '囲炉裏とウッドデッキ付きのお部屋',
-    'stay.irori.description.jp': '',
+    'stay.irori.description.jp': '36㎡ / 1-2名 / セミダブルベッド2台',
     
     // Aboutページ
     'about.title': 'Auberge KOKI',
