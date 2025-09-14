@@ -18,7 +18,7 @@ export default function GlobalHamburgerMenu() {
   // - 追加: ホームでもハンバーガーだけ黒にする（メニュー類の色分岐は現状維持）
   const isLightBackground = pathname !== '/';
   const shouldBeDark = showMenu || isLightBackground; // 既存の全体ルール（SimpleMenuに渡す）
-  const shouldBeDarkForHamburger = pathname === '/' ? true : shouldBeDark; // ホームでは常に黒
+  const shouldBeDarkForHamburger = pathname === '/' ? false : shouldBeDark; // ホームでは白
 
   // 対象ページでメニューを開いた時にブラーを当てる
   const blurEligiblePaths = ["/reservation", "/stay", "/contact", "/about"];
