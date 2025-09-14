@@ -28,7 +28,7 @@ export default function Contact() {
       {/* コンテンツエリア */}
       <div className="w-full flex items-center justify-center flex-1">
         <div className="w-full max-w-6xl pl-8 pr-6 md:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-12 items-start">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-12 items-start pl-2 md:pl-0">
             {/* 左側 - タイトル（画像） */}
             <div className="flex items-start md:justify-start justify-center">
               <Image
@@ -42,8 +42,8 @@ export default function Contact() {
             </div>
             
             {/* 右側 - 連絡先情報 */}
-            <div className="text-black self-start pt-2 md:pt-4">
-              <div className="grid grid-cols-[100px_1fr] md:grid-cols-[120px_1fr] gap-y-4 md:gap-y-6 gap-x-1 md:gap-x-8 text-sm md:text-xl mx-auto max-w-[440px] md:max-w-none">
+            <div className="text-black self-start pl-6 pt-2 md:pt-4">
+              <div className="grid grid-cols-[100px_1fr] md:grid-cols-[120px_1fr] gap-y-4 md:gap-y-6 md:gap-x-8 text-sm md:text-xl mx-auto max-w-[440px] md:max-w-none">
                 <span className="font-medium">MAIL</span>
                 <a href="mailto:aubergekoki@gmail.com" className="underline hover:no-underline">aubergekoki@gmail.com</a>
 
