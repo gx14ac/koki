@@ -21,12 +21,12 @@ export default function Contact() {
           />
         </Link>
       </div>
-      <div className="block md:hidden w-full max-w-[640px] mx-auto px-5 pt-10 pb-6">
+      <div className="block md:hidden w-full max-w-[640px] mx-auto px-5 mt-4 pt-6 pb-4">
         <Link href="/" className="text-2xl tracking-wide">KOKI</Link>
       </div>
       
       {/* コンテンツエリア */}
-      <div className="w-full flex items-center justify-center flex-1">
+      <div className="w-full flex items-center justify-center flex-1 md:pt-48">
         <div className="w-full max-w-6xl pl-8 pr-6 md:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-12 items-start pl-2 md:pl-0">
             {/* 左側 - タイトル（画像） */}

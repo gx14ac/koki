@@ -46,7 +46,7 @@ export default function Stay() {
       </div>
 
       {/* モバイル用テキストロゴ（Reservationに合わせる） */}
-      <div className="block md:hidden w-full max-w-[640px] mx-auto px-5 pt-6 pb-4">
+      <div className="block md:hidden w-full max-w-[640px] mx-auto px-5 mt-4 pt-6 pb-4">
         <Link href="/" className="text-2xl tracking-wide">KOKI</Link>
       </div>
       

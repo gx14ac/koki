@@ -10,7 +10,7 @@ export default function Reservation() {
       {/* モバイル版（スクショ準拠） */}
       <div className="block md:hidden">
         {/* ヘッダー（左: KOKI テキスト） */}
-        <div className="w-full max-w-[640px] mx-auto px-5 pt-10 pb-6">
+        <div className="w-full max-w-[640px] mx-auto px-5 mt-4 pt-6 pb-4">
           <Link href="/" className="text-2xl tracking-wide">KOKI</Link>
         </div>
 

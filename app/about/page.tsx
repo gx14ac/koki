@@ -21,7 +21,7 @@ export default function About() {
           />
         </Link>
       </div>
-      <div className="block md:hidden w-full max-w-[640px] mx-auto px-5 pt-10 pb-6">
+      <div className="block md:hidden w-full max-w-[640px] mx-auto px-5 mt-4 pt-6 pb-4">
         <Link href="/" className="text-2xl tracking-wide">KOKI</Link>
       </div>
 
@@ -65,7 +65,7 @@ export default function About() {
       </div>
 
       {/* 2枚の画像を左右に継ぎ目なく長方形で配置 */}
-      <div className="hidden md:flex w-full items-center pt-40 justify-center flex-1">
+      <div className="hidden md:flex w-full items-center pt-48 justify-center flex-1">
         <div className="w-full max-w-[1200px] px-4 md:px-6">
           <div className="relative w-full aspect-[14/9] md:aspect-[16/9]">
             {/* 左の縦書きキャプション */}
