@@ -172,7 +172,7 @@ export default function Reservation() {
           <div className="max-w-[1400px] px-5 md:px-6 lg:px-24 pb-10 md:pb-14">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-24 lg:gap-32 xl:gap-90">
               {/* 左カラム：左レール見出し（DINNER）＋ コンテンツ */}
-              <div className="md:pl-8 lg:pl-12 xl:pl-16 2xl:pl-20">
+              <div className="md:pl-16 lg:pl-28 xl:pl-40 2xl:pl-100">
                 <div className="flex items-start gap-8">
                   <div className="w-[200px] shrink-0 text-left leading-tight">
                     <h2 className="text-[28px] tracking-wide">DINNER</h2>
@@ -247,7 +247,7 @@ export default function Reservation() {
               </div>
 
               {/* 右カラム：DINNER＆STAY＋コンテンツ */}
-              <div>
+              <div className="md:pl-16 lg:pl-28 xl:pl-40 2xl:pl-100">
                 <div className="flex items-start gap-16 md:gap-10 lg:gap-24">
                   <div className="w-[200px] shrink-0 text-left leading-tight">
                     <h2 className="text-[28px] tracking-wide whitespace-nowrap">DINNER＆STAY</h2>
