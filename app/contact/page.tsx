@@ -66,7 +66,12 @@ export default function Contact() {
           </div>
         </div>
       </div>
-      <SectionBar variant="more-left" />
+      <div className="block md:hidden">
+        <SectionBar variant="mobile-large" />
+      </div>
+      <div className="hidden md:block">
+        <SectionBar variant="more-left" />
+      </div>
     </div>
   );
 }

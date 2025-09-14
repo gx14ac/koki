@@ -13,9 +13,12 @@ export default function GlobalHamburgerMenu() {
   const [showMenu, setShowMenu] = useState(false);
   const [selectedMenuItem, setSelectedMenuItem] = useState<string>("");
 
-  // ホームページ以外では常にダークモード（黒）にする
+  // ページごとの色分岐
+  // - 既存: ホーム以外は黒
+  // - 追加: ホームでもハンバーガーだけ黒にする（メニュー類の色分岐は現状維持）
   const isLightBackground = pathname !== '/';
-  const shouldBeDark = showMenu || isLightBackground;
+  const shouldBeDark = showMenu || isLightBackground; // 既存の全体ルール（SimpleMenuに渡す）
+  const shouldBeDarkForHamburger = pathname === '/' ? true : shouldBeDark; // ホームでは常に黒
 
   // 対象ページでメニューを開いた時にブラーを当てる
   const blurEligiblePaths = ["/reservation", "/stay", "/contact", "/about"];
@@ -41,7 +44,7 @@ export default function GlobalHamburgerMenu() {
       {/* ハンバーガーメニューボタン - 常に表示 */}
       <HamburgerMenu 
         isOpen={showNavigation} 
-        isDark={shouldBeDark}
+        isDark={shouldBeDarkForHamburger}
         onClick={() => {
           if (showNavigation) {
             setShowNavigation(false);
