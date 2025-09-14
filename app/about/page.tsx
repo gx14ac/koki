@@ -8,8 +8,8 @@ export default function About() {
 
   return (
     <div className="font-sans min-h-screen relative flex flex-col">
-      {/* 戻るロゴ（共通レイアウトに合わせて左上） */}
-      <div className="absolute top-12 left-16 lg:left-20 z-10">
+      {/* 戻るロゴ（PC:画像ロゴ / Mobile:テキストロゴ） */}
+      <div className="absolute top-12 left-16 lg:left-20 z-10 hidden md:block">
         <Link href="/" className="transition-transform hover:scale-105">
           <Image
             src="/koki_logo_basic_white.png"
@@ -20,6 +20,9 @@ export default function About() {
             className="filter invert"
           />
         </Link>
+      </div>
+      <div className="block md:hidden w-full max-w-[640px] mx-auto px-5 pt-10 pb-6">
+        <Link href="/" className="text-2xl tracking-wide">KOKI</Link>
       </div>
 
       {/* 2枚の画像を左右に継ぎ目なく長方形で配置 */}

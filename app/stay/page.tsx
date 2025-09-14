@@ -31,8 +31,8 @@ export default function Stay() {
 
   return (
     <div className="font-sans min-h-screen relative flex flex-col">
-      {/* KOKIロゴ - 左上に配置 */}
-      <div className="absolute top-12 left-16 lg:left-20 z-10">
+      {/* KOKIロゴ - 左上（PC/Tabletのみ画像ロゴ） */}
+      <div className="absolute top-12 left-16 lg:left-20 z-10 hidden md:block">
         <Link href="/" className="transition-transform hover:scale-105">
           <Image
             src="/koki_logo_basic_white.png"
@@ -44,9 +44,14 @@ export default function Stay() {
           />
         </Link>
       </div>
+
+      {/* モバイル用テキストロゴ（Reservationに合わせる） */}
+      <div className="block md:hidden w-full max-w-[640px] mx-auto px-5 pt-6 pb-4">
+        <Link href="/" className="text-2xl tracking-wide">KOKI</Link>
+      </div>
       
       {/* コンテンツエリア - 全体画面で中央配置 */}
-      <div className="w-full flex flex-col items-center justify-center pt-40 md:pt-48 flex-1">
+      <div className="w-full flex flex-col items-center justify-center pt-6 md:pt-48 flex-1">
 
       {/* KINOMA 詳細セクション */}
         <div className="w-full mx-auto px-8 py-8">
@@ -123,30 +128,41 @@ export default function Stay() {
         </div>
 
         {/* ご利用案内セクション */}
-        <div className="w-full mx-auto px-8 py-80">
+        <div className="w-full mx-auto px-8 py-12 md:py-80">
           <div className="w-full max-w-5xl md:max-w-6xl mx-auto text-black">
             {/* チェックイン・アウト */}
-            <div className="flex items-center justify-center gap-40 mb-20 text-base md:text-lg">
+            {/* Mobile: 2つのラベルを横並びで、各自の下にのみ下線 */}
+            <div className="block md:hidden mb-6 text-sm px-4">
+              <div className="flex items-baseline justify-between flex-nowrap w-full gap-6">
+                <span className="inline-block border-b border-gray-400 pb-1 whitespace-nowrap">チェックイン 15:00〜</span>
+                <span className="inline-block border-b border-gray-400 pb-1 whitespace-nowrap">チェックアウト 〜11:00</span>
+              </div>
+            </div>
+            {/* Desktop: 2つの項目を中央に配置 */}
+            <div className="hidden md:flex md:items-center md:justify-center md:gap-40 mb-20 text-lg">
               <div className="inline-block border-b border-gray-400 pb-1">チェックイン 15:00〜</div>
               <div className="inline-block border-b border-gray-400 pb-1">チェックアウト 〜11:00</div>
             </div>
-            <hr className="border-gray-300 my-10" />
+            <hr className="border-gray-300 my-10 hidden md:block" />
 
             {/* 設備・アメニティ */}
-            <div className="grid grid-cols-[160px_1fr] gap-x-10 gap-y-6 py-8 text-base md:text-lg">
+            <div className="grid grid-cols-[110px_1fr] md:grid-cols-[160px_1fr] gap-x-4 md:gap-x-10 gap-y-6 py-8 text-sm md:text-lg items-center">
               <div className="font-medium whitespace-nowrap">設備・アメニティ</div>
-              <div className="overflow-x-auto">
-                <p className="whitespace-nowrap">
-                  ドライヤー / ソープ類(シャンプー・リンス・ボディソープ) / タオル類 (フェイスタオル・バスタオル) / ボディタオル / 歯ブラシ / メンズ用髭剃り / コーム / ティッシュケース / ハンガー / スリッパ / 冷蔵庫 / Wi‑Fi 完備
+              <div>
+                <p className="whitespace-pre-wrap leading-relaxed text-xs md:text-base">
+                  ドライヤー / ソープ類(シャンプー・リンス・ボディソープ) /<br />
+                  タオル類（フェイスタオル・バスタオル） / ボディタオル / 歯ブラシ /<br />
+                  メンズ用髭剃り / コーム / ティッシュケース / ハンガー /<br />
+                  スリッパ / 冷蔵庫 / Wi‑Fi 完備
                 </p>
               </div>
             </div>
             <hr className="border-gray-300 my-8" />
 
             {/* 注意事項 */}
-            <div className="grid grid-cols-[160px_1fr] gap-x-10 gap-y-6 py-8 text-base md:text-lg items-center">
+            <div className="grid grid-cols-[110px_1fr] md:grid-cols-[160px_1fr] gap-x-4 md:gap-x-10 gap-y-6 py-8 text-sm md:text-lg items-center">
               <div className="font-medium">注意事項</div>
-              <div className="space-y-3">
+              <div className="space-y-3 text-xs md:text-base">
                 <p>・ご滞在中は終日禁煙とさせていただいております。（電子タバコ含む） </p>
                 <p>ご不便をおかけいたしますが、喫煙エリアをご利用ください。</p>
                 <p>・自然の静けさとともに、夜の穏やかな時間をどうぞお楽しみください。</p>
@@ -158,9 +174,9 @@ export default function Stay() {
             <hr className="border-gray-300 my-8" />
 
             {/* キャンセル料 */}
-            <div className="grid grid-cols-[160px_1fr] gap-x-10 gap-y-6 py-8 text-base md:text-lg items-center">
+            <div className="grid grid-cols-[120px_1fr] md:grid-cols-[160px_1fr] gap-x-6 md:gap-x-10 gap-y-6 py-8 text-sm md:text-lg items-center">
               <div className="font-medium">キャンセル料</div>
-              <div className="space-y-1">
+              <div className="space-y-1 text-xs md:text-base">
                 <p>5日前〜 ご予約料金の50%</p>
                 <p>3日前（72時間前）〜 ご予約料金の100%</p>
               </div>
@@ -189,7 +205,13 @@ export default function Stay() {
             <hr className="border-gray-300 my-10" />
 
       </div>
-      <SectionBar variant="more-left" />
+      {/* セクションバー: モバイルはコンパクト版、PCは従来 */}
+      <div className="block md:hidden">
+        <SectionBar variant="mobile-large" />
+      </div>
+      <div className="hidden md:block">
+        <SectionBar variant="more-left" />
+      </div>
     </div>
   );
 }

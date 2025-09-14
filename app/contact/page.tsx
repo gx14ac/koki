@@ -8,8 +8,8 @@ export default function Contact() {
 
   return (
     <div className="font-sans min-h-screen relative flex flex-col">
-      {/* KOKIロゴ - 左上に配置 */}
-      <div className="absolute top-12 left-16 lg:left-20 z-10">
+      {/* KOKIロゴ - 左上（PCは画像 / Mobileはテキスト） */}
+      <div className="absolute top-12 left-16 lg:left-20 z-10 hidden md:block">
         <Link href="/" className="transition-transform hover:scale-105">
           <Image
             src="/koki_logo_basic_white.png"
@@ -21,10 +21,13 @@ export default function Contact() {
           />
         </Link>
       </div>
+      <div className="block md:hidden w-full max-w-[640px] mx-auto px-5 pt-10 pb-6">
+        <Link href="/" className="text-2xl tracking-wide">KOKI</Link>
+      </div>
       
       {/* コンテンツエリア */}
       <div className="w-full flex items-center justify-center flex-1">
-        <div className="w-full max-w-6xl px-6 md:px-8">
+        <div className="w-full max-w-6xl pl-8 pr-6 md:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-12 items-start">
             {/* 左側 - タイトル（画像） */}
             <div className="flex items-start md:justify-start justify-center">
@@ -33,14 +36,14 @@ export default function Contact() {
                 alt="Auberge KOKI"
                 width={280}
                 height={120}
-                className="object-contain block"
+                className="object-contain block w-40 h-auto md:w-[280px] md:h-[120px]"
                 priority
               />
             </div>
             
             {/* 右側 - 連絡先情報 */}
-            <div className="text-black self-start pt-4">
-              <div className="grid grid-cols-[120px_1fr] gap-y-6 gap-x-8 text-lg md:text-xl">
+            <div className="text-black self-start pt-2 md:pt-4">
+              <div className="grid grid-cols-[100px_1fr] md:grid-cols-[120px_1fr] gap-y-4 md:gap-y-6 gap-x-1 md:gap-x-8 text-sm md:text-xl mx-auto max-w-[440px] md:max-w-none">
                 <span className="font-medium">MAIL</span>
                 <a href="mailto:aubergekoki@gmail.com" className="underline hover:no-underline">aubergekoki@gmail.com</a>
 

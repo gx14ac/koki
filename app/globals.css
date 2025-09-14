@@ -38,6 +38,11 @@ body {
   font-weight: 400;
 }
 
+/* モバイル時は全体のフォントサイズを少しだけ小さくする */
+@media (max-width: 767px) {
+  body { font-size: 15px; }
+}
+
 /* 波のアニメーション */
 @keyframes wave1 {
   0%, 100% { transform: translateX(-100%) translateY(10px) rotate(0deg); }
@@ -208,4 +213,14 @@ body {
   border-radius: 50%;
   pointer-events: none;
   animation: droplet 0.8s ease-out;
+}
+
+/* メニュー開時にホーム中央ロゴを隠す（モバイルのみ） */
+@media (max-width: 767px) {
+  html.menu-open .home-center-logo {
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+    display: none !important;
+  }
 }

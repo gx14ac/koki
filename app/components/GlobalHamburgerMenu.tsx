@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import { AnimatePresence } from "framer-motion";
 import HamburgerMenu from "./HamburgerMenu";
@@ -20,6 +20,21 @@ export default function GlobalHamburgerMenu() {
   // 対象ページでメニューを開いた時にブラーを当てる
   const blurEligiblePaths = ["/reservation", "/stay", "/contact", "/about"];
   const shouldShowBackdrop = showNavigation && blurEligiblePaths.some((p) => pathname.startsWith(p));
+
+  // メニュー開閉に応じて <html> にフラグクラスを付与（モバイルでホーム中央ロゴを隠すため）
+  useEffect(() => {
+    if (typeof document === "undefined") return;
+    const htmlEl = document.documentElement;
+    const shouldOpen = showNavigation || showMenu;
+    if (shouldOpen) {
+      htmlEl.classList.add("menu-open");
+    } else {
+      htmlEl.classList.remove("menu-open");
+    }
+    return () => {
+      htmlEl.classList.remove("menu-open");
+    };
+  }, [showNavigation, showMenu]);
 
   return (
     <>
