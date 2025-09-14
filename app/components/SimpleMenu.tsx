@@ -120,6 +120,7 @@ export default function SimpleMenu({ onClose, onMenuSelect, isDark = false }: Si
       exit="exit"
     >
       <div className="flex h-full">
+        {/* モバイル時：左上ロゴは非表示（不要） */}
         {/* 左側の空いているエリア - クリックで閉じる */}
         <div 
           className="flex-1 h-full cursor-pointer"
