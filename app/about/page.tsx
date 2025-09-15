@@ -46,7 +46,7 @@ export default function About() {
           <div className="flex items-start w-full">
             {/* 左：縦書きテキスト（固定幅15%） */}
             <div className="shrink-0 w-[15%] -mt-2 -ml-2 text-black text-[13px] leading-relaxed tracking-wide whitespace-pre-line break-keep" style={{ writingMode: 'vertical-rl', textOrientation: 'mixed' }}>
-              {`山を扱く、なにもないようでなんでもある。\n二十四節気の記憶を耕す。`}
+              {`山を扱く、なにもないようでなんでもある。\n二十四節季の記憶を耕す。`}
             </div>
             {/* 右：画像（固定幅85%） */}
             <div className="w-[85%] ml-auto mt-16">
@@ -73,7 +73,7 @@ export default function About() {
               className="absolute top-1/2 -translate-y-1/2 -left-28 md:-left-36 z-10 text-black leading-relaxed tracking-wide text-[18px] whitespace-pre break-keep"
               style={{ writingMode: 'vertical-rl', textOrientation: 'mixed' }}
             >
-              {`山を扱く、なにもないようでなんでもある。\n二十四節気の記憶を耕す。`}
+              {`山を扱く、なにもないようでなんでもある。\n二十四節季の記憶を耕す。`}
             </div>
             {/* 左半分 */}
             <div className="absolute inset-y-0 left-0 right-1/2">

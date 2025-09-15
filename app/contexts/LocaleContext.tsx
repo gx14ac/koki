@@ -75,7 +75,7 @@ const translations = {
     
     // メタデータ
     'meta.title': 'オーベルジュ KOKI',
-    'meta.description': '山を扱く、なにもないようでなんでもある。二十四節気の記憶を耕す。',
+    'meta.description': '山を扱く、なにもないようでなんでもある。二十四節季の記憶を耕す。',
     'meta.keywords': 'オーベルジュ, 宿泊, レストラン, 山梨, 自然, 料理',
   }
 };
