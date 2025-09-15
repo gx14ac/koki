@@ -6,7 +6,7 @@ import SectionBar from "../components/SectionBar";
 
 export default function Reservation() {
   return (
-    <div className="font-sans min-h-screen relative flex flex-col text-black">
+    <div className="font-sans min-h-screen relative flex flex-col text-black overflow-x-hidden">
       {/* モバイル版（スクショ準拠） */}
       <div className="block md:hidden">
         {/* ヘッダー（左: KOKI テキスト） */}
@@ -169,10 +169,10 @@ export default function Reservation() {
             </Link>
           </div>
 
-          <div className="max-w-[1400px] px-5 md:px-6 lg:px-24 pb-10 md:pb-14">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-24 lg:gap-32 xl:gap-90">
+          <div className="max-w-7xl mx-auto pl-2 pr-8 md:pl-2 md:pr-12 pb-10 md:pb-14">
+            <div className="grid grid-cols-1 md:grid-cols-2 justify-center gap-12 md:gap-24 lg:gap-32 xl:gap-40">
               {/* 左カラム：左レール見出し（DINNER）＋ コンテンツ */}
-              <div className="md:pl-16 lg:pl-28 xl:pl-40 2xl:pl-100">
+              <div className="w-full">
                 <div className="flex items-start gap-8">
                   <div className="w-[200px] shrink-0 text-left leading-tight">
                     <h2 className="text-[28px] tracking-wide">DINNER</h2>
@@ -247,7 +247,7 @@ export default function Reservation() {
               </div>
 
               {/* 右カラム：DINNER＆STAY＋コンテンツ */}
-              <div className="md:pl-16 lg:pl-28 xl:pl-40 2xl:pl-100">
+              <div className="w-full">
                 <div className="flex items-start gap-16 md:gap-10 lg:gap-24">
                   <div className="w-[200px] shrink-0 text-left leading-tight">
                     <h2 className="text-[28px] tracking-wide whitespace-nowrap">DINNER＆STAY</h2>
