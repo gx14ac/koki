@@ -10,7 +10,7 @@ export default function Stay() {
   const { t, locale } = useLocale();
   const konomaImages = ["/konoma_1.jpg", "/konoma_2.jpg"];
   const [konomaIndex, setKonomaIndex] = useState(0);
-  const iroriImages = ["/irori.JPG", "/irori_2.jpg"];
+  const iroriImages = ["/irori_1.jpg", "/irori_2.jpg"];
   const [iroriIndex, setIroriIndex] = useState(0);
 
   // Auto slide KONOMA
