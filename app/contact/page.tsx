@@ -21,8 +21,17 @@ export default function Contact() {
           />
         </Link>
       </div>
-      <div className="block md:hidden w-full max-w-[640px] mx-auto px-5 mt-4 pt-6 pb-4">
-        <Link href="/" className="text-2xl tracking-wide">KOKI</Link>
+      <div className="block md:hidden w-full max-w-[640px] mx-auto px-5 mt-5 pb-4">
+        <Link href="/" className="transition-transform hover:scale-105 inline-block">
+          <Image
+            src="/koki_logo_basic_white.png"
+            alt="KOKI"
+            width={80}
+            height={54}
+            priority
+            className="filter invert"
+          />
+        </Link>
       </div>
       
       {/* コンテンツエリア */}

@@ -45,9 +45,18 @@ export default function Stay() {
         </Link>
       </div>
 
-      {/* モバイル用テキストロゴ（Reservationに合わせる） */}
-      <div className="block md:hidden w-full max-w-[640px] mx-auto px-5 mt-4 pt-6 pb-4">
-        <Link href="/" className="text-2xl tracking-wide">KOKI</Link>
+      {/* モバイル用ロゴ画像 */}
+      <div className="block md:hidden w-full max-w-[640px] mx-auto px-5 mt-5 pb-4">
+        <Link href="/" className="transition-transform hover:scale-105 inline-block">
+          <Image
+            src="/koki_logo_basic_white.png"
+            alt="KOKI"
+            width={80}
+            height={54}
+            priority
+            className="filter invert"
+          />
+        </Link>
       </div>
       
       {/* コンテンツエリア - 全体画面で中央配置 */}

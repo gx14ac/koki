@@ -21,8 +21,17 @@ export default function About() {
           />
         </Link>
       </div>
-      <div className="block md:hidden w-full max-w-[640px] mx-auto px-5 mt-4 pt-6 pb-4">
-        <Link href="/" className="text-2xl tracking-wide">KOKI</Link>
+      <div className="block md:hidden w-full max-w-[640px] mx-auto px-5 mt-5 pb-4">
+        <Link href="/" className="transition-transform hover:scale-105 inline-block">
+          <Image
+            src="/koki_logo_basic_white.png"
+            alt="KOKI"
+            width={80}
+            height={54}
+            priority
+            className="filter invert"
+          />
+        </Link>
       </div>
 
       {/* モバイル専用ビジュアル - 上段：全幅画像 */}
@@ -66,11 +75,11 @@ export default function About() {
 
       {/* 2枚の画像を左右に継ぎ目なく長方形で配置 */}
       <div className="hidden md:flex w-full items-center pt-48 justify-center flex-1">
-        <div className="w-full max-w-[1200px] px-4 md:px-6">
+        <div className="w-full max-w-[1000px] lg:max-w-[1200px] px-4 md:px-6">
           <div className="relative w-full aspect-[14/9] md:aspect-[16/9]">
             {/* 左の縦書きキャプション */}
             <div
-              className="absolute top-1/2 -translate-y-1/2 -left-28 md:-left-36 z-10 text-black leading-relaxed tracking-wide text-[18px] whitespace-pre break-keep"
+              className="absolute top-1/2 -translate-y-1/2 left-2 md:left-0 lg:-left-12 xl:-left-20 2xl:-left-24 z-10 text-black leading-relaxed tracking-wide text-[18px] whitespace-pre break-keep"
               style={{ writingMode: 'vertical-rl', textOrientation: 'mixed' }}
             >
               {`山を扱く、なにもないようでなんでもある。\n二十四節季の記憶を耕す。`}
