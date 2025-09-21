@@ -21,10 +21,10 @@ export default function Home() {
           <Image
             src="/koki-white.png"
             alt="KOKI"
-            width={150}
-            height={50}
+            width={120}
+            height={40}
             priority
-            className="drop-shadow-2xl w-32 h-auto md:w-[150px] md:h-auto"
+            className="drop-shadow-2xl w-28 h-auto md:w-[120px] md:h-auto"
           />
       </div>
     </div>

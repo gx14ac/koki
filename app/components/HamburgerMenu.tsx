@@ -24,8 +24,8 @@ export default function HamburgerMenu({ isOpen, onClick, isDark = false }: Hambu
           style={{ height: '1px' }}
           animate={{
             rotate: isOpen ? 45 : 0,
-            y: isOpen ? 0 : (isHovered ? -14 : -11),
-            width: isOpen ? "3.0rem" : (isHovered ? "3.5rem" : "3.0rem"),
+            y: isOpen ? 0 : (isHovered ? -13 : -10),
+            width: isOpen ? "2.8rem" : (isHovered ? "3.0rem" : "2.6rem"),
             backgroundColor: isDark ? "#000000" : "#ffffff",
           }}
           transition={{ 
@@ -41,7 +41,7 @@ export default function HamburgerMenu({ isOpen, onClick, isDark = false }: Hambu
           animate={{
             opacity: isOpen ? 0 : 1,
             scaleX: isOpen ? 0 : 1,
-            width: isOpen ? "3.0rem" : (isHovered ? "3.5rem" : "3.0rem"),
+            width: isOpen ? "2.8rem" : (isHovered ? "3.0rem" : "2.6rem"),
             backgroundColor: isDark ? "#000000" : "#ffffff",
           }}
           transition={{ 
@@ -56,8 +56,8 @@ export default function HamburgerMenu({ isOpen, onClick, isDark = false }: Hambu
           style={{ height: '1px' }}
           animate={{
             rotate: isOpen ? -45 : 0,
-            y: isOpen ? 0 : (isHovered ? 14 : 11),
-            width: isOpen ? "3.0rem" : (isHovered ? "3.5rem" : "3.0rem"),
+            y: isOpen ? 0 : (isHovered ? 13 : 10),
+            width: isOpen ? "2.8rem" : (isHovered ? "3.0rem" : "2.6rem"),
             backgroundColor: isDark ? "#000000" : "#ffffff",
           }}
           transition={{ 
