@@ -9,10 +9,10 @@ export default function About() {
   return (
     <div className="font-sans min-h-screen relative flex flex-col">
       {/* 戻るロゴ（PC:画像ロゴ / Mobile:テキストロゴ） */}
-      <div className="absolute top-12 left-16 lg:left-20 z-10 hidden md:block">
+      <div className="absolute top-14 left-16 lg:left-20 z-10 hidden md:block">
         <Link href="/" className="transition-transform hover:scale-105">
           <Image
-            src="/koki_logo_basic_white.png"
+            src="/koki_vert_white_logo.png"
             alt="KOKI"
             width={120}
             height={160}
@@ -21,10 +21,10 @@ export default function About() {
           />
         </Link>
       </div>
-      <div className="block md:hidden w-full max-w-[640px] mx-auto px-5 mt-5 pb-4">
+      <div className="block md:hidden w-full max-w-[640px] mx-auto px-5 mt-6 pb-4">
         <Link href="/" className="transition-transform hover:scale-105 inline-block">
           <Image
-            src="/koki_logo_basic_white.png"
+            src="/koki_vert_white_logo.png"
             alt="KOKI"
             width={80}
             height={54}

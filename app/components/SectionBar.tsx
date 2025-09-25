@@ -37,8 +37,11 @@ export default function SectionBar({ variant = "default" }: SectionBarProps) {
       ? "text-xs"
       : "text-sm md:text-base";
 
+  const footerClasses =
+    variant === "mobile-large" ? "w-full py-2 mb-4" : "w-full py-6";
+
   return (
-    <footer className="w-full py-6">
+    <footer className={footerClasses}>
       <div className={containerClasses}>
         <nav className={navClasses}>
           {links.map((link, idx) => {

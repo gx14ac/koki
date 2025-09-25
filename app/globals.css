@@ -9,6 +9,31 @@
   font-display: swap;
 }
 
+/* 日本語用フォント: A-OTF 中ゴシックBBB Pr5 Medium */
+@font-face {
+  font-family: 'A-OTF 中ゴシックBBB Pr5 Medium';
+  src:
+    local('A-OTF 中ゴシックBBB Pr5 Medium'),
+    url('/fonts/A-OTF-ChuGoBBBPr5-Medium.woff2') format('woff2'),
+    url('/fonts/A-OTF-ChuGoBBBPr5-Medium.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  /* 日本語の主要ブロックに限定 */
+  unicode-range: U+3000-303F, U+3040-309F, U+30A0-30FF, U+4E00-9FFF, U+FF00-FFEF;
+}
+@font-face {
+  font-family: 'A-OTF 中ゴシックBBB Pr5 Medium';
+  src:
+    local('A-OTF 中ゴシックBBB Pr5 Medium'),
+    url('/fonts/A-OTF-ChuGoBBBPr5-Medium.woff2') format('woff2'),
+    url('/fonts/A-OTF-ChuGoBBBPr5-Medium.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+3000-303F, U+3040-309F, U+30A0-30FF, U+4E00-9FFF, U+FF00-FFEF;
+}
+
 :root {
   --background: rgb(245, 245, 245);
   --foreground: #171717;
@@ -17,7 +42,7 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: 'Helvetica Regular', 'Helvetica', 'Helvetica Neue', Arial, sans-serif;
+  --font-sans: 'A-OTF 中ゴシックBBB Pr5 Medium', 'Helvetica Regular', 'Helvetica', 'Helvetica Neue', Arial, sans-serif;
   --font-mono: var(--font-geist-mono);
 }
 
@@ -34,7 +59,7 @@ html { background: rgb(245, 245, 245); }
 body {
   background: rgb(245, 245, 245);
   color: var(--foreground);
-  font-family: 'Helvetica Regular', 'Helvetica', 'Helvetica Neue', Arial, sans-serif;
+  font-family: 'A-OTF 中ゴシックBBB Pr5 Medium', 'Helvetica Regular', 'Helvetica', 'Helvetica Neue', Arial, sans-serif;
   font-weight: 400;
 }
 
@@ -218,6 +243,16 @@ body {
 /* メニュー開時にホーム中央ロゴを隠す（モバイルのみ） */
 @media (max-width: 767px) {
   html.menu-open .home-center-logo {
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+    display: none !important;
+  }
+}
+
+/* モバイル時、メニュー開時は各ページの左上ロゴを隠す（トップは対象外：クラス未付与） */
+@media (max-width: 767px) {
+  html.menu-open .hide-on-menu-open-mobile {
     opacity: 0 !important;
     visibility: hidden !important;
     pointer-events: none !important;

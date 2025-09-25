@@ -32,10 +32,10 @@ export default function Stay() {
   return (
     <div className="font-sans min-h-screen relative flex flex-col">
       {/* KOKIロゴ - 左上（PC/Tabletのみ画像ロゴ） */}
-      <div className="absolute top-12 left-16 lg:left-20 z-10 hidden md:block">
+      <div className="absolute top-16 left-16 lg:left-20 z-10 hidden md:block">
         <Link href="/" className="transition-transform hover:scale-105">
           <Image
-            src="/koki_logo_basic_white.png"
+            src="/koki_vert_white_logo.png"
             alt="KOKI"
             width={120}
             height={160}
@@ -46,10 +46,10 @@ export default function Stay() {
       </div>
 
       {/* モバイル用ロゴ画像 */}
-      <div className="block md:hidden w-full max-w-[640px] mx-auto px-5 mt-5 pb-4">
+      <div className="block md:hidden w-full max-w-[640px] mx-auto px-5 mt-8 pb-4">
         <Link href="/" className="transition-transform hover:scale-105 inline-block">
           <Image
-            src="/koki_logo_basic_white.png"
+            src="/koki_vert_white_logo.png"
             alt="KOKI"
             width={80}
             height={54}
@@ -63,18 +63,18 @@ export default function Stay() {
       <div className="w-full flex flex-col items-center justify-center pt-6 md:pt-48 flex-1">
 
       {/* KINOMA 詳細セクション */}
-        <div className="w-full mx-auto px-8 py-8">
+        <div className="w-full mx-auto">
           {/* KINOMAタイトルとテキスト情報 */}
-          <div className="text-center mb-6">
-                        <h3 className="text-3xl font-light mb-8 text-black">{t('stay.kinoma.title')}</h3>
-            <p className="text-base text-black">{t('stay.kinoma.concept.jp')}</p>
-            <p className="text-base text-black mb-3">{t('stay.kinoma.description.jp')}</p>
+          <div className="text-center mb-3">
+                        <h3 className="text-xl font-light mb-2 text-black">{t('stay.kinoma.title')}</h3>
+            <p className="text-light text-black text-xs md:text-sm">{t('stay.kinoma.concept.jp')}</p>
+            <p className="text-light text-black mb-3 text-xs md:text-sm">{t('stay.kinoma.description.jp')}</p>
           </div>
           
           {/* KINOMA画像 - フェード切替（ドット付き） */}
           <div className="flex flex-col items-center gap-4">
-            <div className="w-full max-w-5xl md:max-w-6xl">
-              <div className="relative aspect-[16/9] overflow-hidden shadow-lg">
+            <div className="w-full max-w-5xl md:max-w-6xl px-8 md:px-6">
+              <div className="relative aspect-[16/9] md:aspect-[16/9] overflow-hidden shadow-lg">
                 {konomaImages.map((src, idx) => (
                   <div
                     key={src}
@@ -84,13 +84,13 @@ export default function Stay() {
                   </div>
                 ))}
                 {/* dots inside slider */}
-                <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex items-center gap-2">
+                <div className="absolute bottom-2 left-1/2 -translate-x-1/2 flex items-center gap-2">
                   {konomaImages.map((_, i) => (
                     <button
                       key={i}
                       onClick={() => setKonomaIndex(i)}
                       aria-label={`Go to slide ${i + 1}`}
-                      className={`w-[6px] h-[6px] rounded-full transition-colors ${i === konomaIndex ? 'bg-white' : 'bg-gray-400/70'}`}
+                      className={`w-[4px] h-[4px] rounded-full transition-colors ${i === konomaIndex ? 'bg-white' : 'bg-gray-400/70'}`}
                     />
                   ))}
                 </div>
@@ -100,18 +100,18 @@ export default function Stay() {
         </div>
 
       {/* IRORI 詳細セクション */}
-        <div className="w-full mx-auto px-8 py-4">
+        <div className="w-full mx-auto mt-20">
           {/* IROIタイトルとテキスト情報 */}
-          <div className="text-center mb-6">
-                        <h3 className="text-3xl font-light mb-8 text-black">{t('stay.irori.title')}</h3>
-            <p className="text-base text-black">{t('stay.irori.concept.jp')}</p>
-            <p className="text-base text-black mb-3">{t('stay.irori.description.jp')}</p>
+          <div className="text-center mb-3">
+          <h3 className="text-xl font-light mb-2 text-black">{t('stay.irori.title')}</h3>
+                        <p className="text-light text-black text-xs md:text-sm">{t('stay.irori.concept.jp')}</p>
+            <p className="text-light text-black mb-3 text-xs md:text-sm">{t('stay.irori.description.jp')}</p>
           </div>
           
           {/* IRORI画像 - フェード切替（ドット付き） */}
           <div className="flex flex-col items-center gap-4">
-            <div className="w-full max-w-5xl md:max-w-6xl">
-              <div className="relative aspect-[16/9] overflow-hidden shadow-lg">
+            <div className="w-full max-w-5xl md:max-w-6xl px-8 md:px-6">
+              <div className="relative aspect-[16/9] md:aspect-[16/9] overflow-hidden shadow-lg">
                 {iroriImages.map((src, idx) => (
                   <div
                     key={src}
@@ -127,7 +127,7 @@ export default function Stay() {
                       key={i}
                       onClick={() => setIroriIndex(i)}
                       aria-label={`Go to IRORI slide ${i + 1}`}
-                      className={`w-[6px] h-[6px] rounded-full transition-colors ${i === iroriIndex ? 'bg-white' : 'bg-gray-400/70'}`}
+                      className={`w-[4px] h-[4px] rounded-full transition-colors ${i === iroriIndex ? 'bg-white' : 'bg-gray-400/70'}`}
                     />
                   ))}
                 </div>
@@ -141,7 +141,7 @@ export default function Stay() {
           <div className="w-full max-w-5xl md:max-w-6xl mx-auto text-black">
             {/* チェックイン・アウト */}
             {/* Mobile: 2つのラベルを横並びで、各自の下にのみ下線 */}
-            <div className="block md:hidden mb-6 text-sm px-4">
+            <div className="block md:hidden mb-6 text-xs px-4">
               <div className="flex items-baseline justify-between flex-nowrap w-full gap-6">
                 <span className="inline-block border-b border-gray-400 pb-1 whitespace-nowrap">チェックイン 15:00〜</span>
                 <span className="inline-block border-b border-gray-400 pb-1 whitespace-nowrap">チェックアウト 〜11:00</span>
@@ -154,6 +154,7 @@ export default function Stay() {
             </div>
             <hr className="border-gray-300 my-10 hidden md:block" />
 
+            <hr className="border-gray-300 my-8 mt-16" />
             {/* 設備・アメニティ */}
             <div className="grid grid-cols-[110px_1fr] md:grid-cols-[160px_1fr] gap-x-4 md:gap-x-10 gap-y-6 py-8 text-sm md:text-lg items-center">
               <div className="font-medium whitespace-nowrap">設備・アメニティ</div>
