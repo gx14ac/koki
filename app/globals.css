@@ -60,7 +60,8 @@ body {
   background: rgb(245, 245, 245);
   color: var(--foreground);
   font-family: 'A-OTF 中ゴシックBBB Pr5 Medium', 'Helvetica Regular', 'Helvetica', 'Helvetica Neue', Arial, sans-serif;
-  font-weight: 400;
+  font-weight: 400; /* レギュラーに戻す */
+  font-synthesis: none; /* 擬似的なボールド/イタリック生成を禁止 */
 }
 
 /* モバイル時は全体のフォントサイズを少しだけ小さくする */

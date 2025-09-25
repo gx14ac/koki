@@ -156,27 +156,26 @@ export default function Stay() {
 
             <hr className="border-gray-300 my-8 mt-16" />
             {/* 設備・アメニティ */}
-            <div className="grid grid-cols-[110px_1fr] md:grid-cols-[160px_1fr] gap-x-4 md:gap-x-10 gap-y-6 py-8 text-sm md:text-lg items-center">
-              <div className="font-medium whitespace-nowrap">設備・アメニティ</div>
+            <div className="grid grid-cols-[110px_1fr] md:grid-cols-[160px_1fr] gap-x-4 md:gap-x-10 gap-y-6 py-1 text-sm md:text-lg items-center">
+              <div className="font-light text-[12px]">設備・アメニティ</div>
               <div>
-                <p className="whitespace-pre-wrap leading-relaxed text-xs md:text-base">
-                  ドライヤー / ソープ類(シャンプー・リンス・ボディソープ) /<br />
-                  タオル類（フェイスタオル・バスタオル） / ボディタオル / 歯ブラシ /<br />
-                  メンズ用髭剃り / コーム / ティッシュケース / ハンガー /<br />
-                  スリッパ / 冷蔵庫 / Wi‑Fi 完備
+                <p className="whitespace-pre-wrap leading-tight md:leading-relaxed text-[10px] md:text-base">
+                  ドライヤー / ソープ類(シャンプー・リンス・ボディソープ) / タオル類（フェイスタオル・バスタオル） / ボディタオル / 歯ブラシ / メンズ用髭剃り / コーム / ティッシュケース / ハンガー / スリッパ / 冷蔵庫 / Wi‑Fi 完備
                 </p>
               </div>
             </div>
             <hr className="border-gray-300 my-8" />
 
             {/* 注意事項 */}
-            <div className="grid grid-cols-[110px_1fr] md:grid-cols-[160px_1fr] gap-x-4 md:gap-x-10 gap-y-6 py-8 text-sm md:text-lg items-center">
-              <div className="font-medium">注意事項</div>
-              <div className="space-y-3 text-xs md:text-base">
+            <div className="grid grid-cols-[110px_1fr] md:grid-cols-[160px_1fr] md:gap-x-10 gap-y-6 py-1 text-sm md:text-lg items-center">
+              <div className="font-light text-[12px]">注意事項</div>
+              <div className=" whitespace-pre-wrap leading-tight md:leading-relaxed text-[10px] px-3">
                 <p>・ご滞在中は終日禁煙とさせていただいております。（電子タバコ含む） </p>
                 <p>ご不便をおかけいたしますが、喫煙エリアをご利用ください。</p>
+                <br></br>
                 <p>・自然の静けさとともに、夜の穏やかな時間をどうぞお楽しみください。</p>
                 <p>23時以降はお静かにお願いいたします。</p>
+                <br></br>
                 <p>・客室内での飲酒は、適量をお守りください。</p>
                 <p>万一、客室内での飲酒により客室内の汚損が発生した場合、修繕費用をご請求させていただくことがあります。</p>
               </div>
@@ -184,9 +183,9 @@ export default function Stay() {
             <hr className="border-gray-300 my-8" />
 
             {/* キャンセル料 */}
-            <div className="grid grid-cols-[120px_1fr] md:grid-cols-[160px_1fr] gap-x-6 md:gap-x-10 gap-y-6 py-8 text-sm md:text-lg items-center">
-              <div className="font-medium">キャンセル料</div>
-              <div className="space-y-1 text-xs md:text-base">
+            <div className="grid grid-cols-[120px_1fr] md:grid-cols-[160px_1fr] md:gap-x-10 gap-y-6 py-1 text-sm md:text-lg items-center">
+              <div className="font-light text-[12px]">キャンセル料</div>
+              <div className=" whitespace-pre-wrap leading-tight md:leading-relaxed text-[10px]">
                 <p>5日前〜 ご予約料金の50%</p>
                 <p>3日前（72時間前）〜 ご予約料金の100%</p>
               </div>
@@ -197,22 +196,20 @@ export default function Stay() {
 
             {/* FLOOR GUIDE */}
             <div className="text-center mb-10">
-              <h3 className="text-3xl font-light text-black">FLOOR GUIDE</h3>
+              <h3 className="text-xl font-light text-black">FLOOR GUIDE</h3>
             </div>
             <div className="flex items-center justify-center mb-10">
               <div className="w-full max-w-5xl md:max-w-6xl">
                 <Image
                   src="/koki_map.png"
                   alt="Floor Guide"
-                  width={1600}
-                  height={1000}
+                  width={1000}
+                  height={600}
                   className="w-full h-auto object-contain"
                   priority
                 />
               </div>
             </div>
-
-            <hr className="border-gray-300 my-10" />
 
       </div>
       {/* セクションバー: モバイルはコンパクト版、PCは従来 */}
