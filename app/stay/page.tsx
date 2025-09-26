@@ -28,19 +28,19 @@ export default function Stay() {
   }, [iroriImages.length]);
 
   return (
-    <div className="font-sans min-h-screen relative flex flex-col pt-6">
+    <div className="font-sans pt-6 md:-mt-30">
       {/* 左上ロゴは共通コンポーネントで固定表示されるため削除 */}
       
       {/* コンテンツエリア - 全体画面で中央配置 */}
-      <div className="w-full flex flex-col items-center justify-center md:pt-48 flex-1">
+      <div className="w-full flex flex-col items-center justify-center flex-1">
 
       {/* KINOMA 詳細セクション */}
         <div className="w-full mx-auto">
           {/* KINOMAタイトルとテキスト情報 */}
           <div className="text-center mb-3">
-                        <h3 className="text-xl font-light mb-2 text-black">{t('stay.kinoma.title')}</h3>
-            <p className="text-light text-black text-xs md:text-sm">{t('stay.kinoma.concept.jp')}</p>
-            <p className="text-light text-black mb-3 text-xs md:text-sm">{t('stay.kinoma.description.jp')}</p>
+                        <h3 className="text-xl md:text-[30px] font-light mb-3 md:mb-8 text-black">{t('stay.kinoma.title')}</h3>
+            <p className="text-light text-black text-xs md:text-base">{t('stay.kinoma.concept.jp')}</p>
+            <p className="text-light text-black mb-3 md:mb-8 text-xs md:text-base">{t('stay.kinoma.description.jp')}</p>
           </div>
           
           {/* KINOMA画像 - フェード切替（ドット付き） */}
@@ -72,12 +72,12 @@ export default function Stay() {
         </div>
 
       {/* IRORI 詳細セクション */}
-        <div className="w-full mx-auto mt-16">
+        <div className="w-full mx-auto mt-16 md:mt-34">
           {/* IROIタイトルとテキスト情報 */}
           <div className="text-center mb-3">
-          <h3 className="text-xl font-light mb-2 text-black">{t('stay.irori.title')}</h3>
-                        <p className="text-light text-black text-xs md:text-sm">{t('stay.irori.concept.jp')}</p>
-            <p className="text-light text-black mb-3 text-xs md:text-sm">{t('stay.irori.description.jp')}</p>
+          <h3 className="text-xl md:text-[30px] font-light md:mb-8 mb-3 text-black">{t('stay.irori.title')}</h3>
+                        <p className="text-light text-black text-xs md:text-base">{t('stay.irori.concept.jp')}</p>
+            <p className="text-light text-black md:mb-8 mb-3 text-xs md:text-base">{t('stay.irori.description.jp')}</p>
           </div>
           
           {/* IRORI画像 - フェード切替（ドット付き） */}
@@ -109,7 +109,7 @@ export default function Stay() {
         </div>
 
         {/* ご利用案内セクション */}
-        <div className="w-full mx-auto px-8 py-12 md:py-80">
+        <div className="w-full mx-auto px-8 py-12 md:py-60">
           <div className="w-full max-w-5xl md:max-w-6xl mx-auto text-black">
             {/* チェックイン・アウト */}
             {/* Mobile: 2つのラベルを横並びで、各自の下にのみ下線 */}
@@ -120,28 +120,27 @@ export default function Stay() {
               </div>
             </div>
             {/* Desktop: 2つの項目を中央に配置 */}
-            <div className="hidden md:flex md:items-center md:justify-center md:gap-40 mb-20 text-lg">
+            <div className="hidden md:flex md:items-center md:justify-center md:gap-60 mb-20 md:text-xl">
               <div className="inline-block border-b border-gray-400 pb-1">チェックイン 15:00〜</div>
               <div className="inline-block border-b border-gray-400 pb-1">チェックアウト 〜11:00</div>
             </div>
-            <hr className="border-gray-300 my-10 hidden md:block" />
 
-            <hr className="border-gray-300 my-8 mt-16" />
+            <hr className="border-gray-400 border-1.5 my-8 mt-16" />
             {/* 設備・アメニティ */}
             <div className="grid grid-cols-[110px_1fr] md:grid-cols-[160px_1fr] gap-x-4 md:gap-x-10 gap-y-6 py-1 text-sm md:text-lg items-center">
-              <div className="font-light text-[12px]">設備・アメニティ</div>
+              <div className="font-light text-[12px] md:text-xl">設備・アメニティ</div>
               <div>
                 <p className="whitespace-pre-wrap leading-tight md:leading-relaxed text-[10px] md:text-base">
                   ドライヤー / ソープ類(シャンプー・リンス・ボディソープ) / タオル類（フェイスタオル・バスタオル） / ボディタオル / 歯ブラシ / メンズ用髭剃り / コーム / ティッシュケース / ハンガー / スリッパ / 冷蔵庫 / Wi‑Fi 完備
                 </p>
               </div>
             </div>
-            <hr className="border-gray-300 my-8" />
+            <hr className="border-gray-400 border-1.5 my-8" />
 
             {/* 注意事項 */}
             <div className="grid grid-cols-[110px_1fr] md:grid-cols-[160px_1fr] md:gap-x-10 gap-y-6 py-1 text-sm md:text-lg items-center">
-              <div className="font-light text-[12px]">注意事項</div>
-              <div className=" whitespace-pre-wrap leading-tight md:leading-relaxed text-[10px] px-3">
+              <div className="font-light text-[12px] md:text-xl">注意事項</div>
+              <div className=" whitespace-pre-wrap leading-tight md:leading-relaxed text-[10px] md:text-base px-3">
                 <p>・ご滞在中は終日禁煙とさせていただいております。（電子タバコ含む） </p>
                 <p>ご不便をおかけいたしますが、喫煙エリアをご利用ください。</p>
                 <br></br>
@@ -152,23 +151,23 @@ export default function Stay() {
                 <p>万一、客室内での飲酒により客室内の汚損が発生した場合、修繕費用をご請求させていただくことがあります。</p>
               </div>
             </div>
-            <hr className="border-gray-300 my-8" />
+            <hr className="border-gray-400 border-1.5 my-8" />
 
             {/* キャンセル料 */}
             <div className="grid grid-cols-[120px_1fr] md:grid-cols-[160px_1fr] md:gap-x-10 gap-y-6 py-1 text-sm md:text-lg items-center">
-              <div className="font-light text-[12px]">キャンセル料</div>
-              <div className=" whitespace-pre-wrap leading-tight md:leading-relaxed text-[10px]">
+              <div className="font-light text-[12px] md:text-xl">キャンセル料</div>
+              <div className=" whitespace-pre-wrap leading-tight md:leading-relaxed text-[10px] md:text-base">
                 <p>5日前〜 ご予約料金の50%</p>
                 <p>3日前（72時間前）〜 ご予約料金の100%</p>
               </div>
             </div>
-            <hr className="border-gray-300 my-8" />
+            <hr className="border-gray-400 border-1.5 my-8" />
           </div>
         </div>
 
             {/* FLOOR GUIDE */}
-            <div className="text-center mb-12">
-              <h3 className="text-lg font-extralight text-black">FLOOR GUIDE</h3>
+            <div className="text-center mb-10">
+              <h3 className="text-lg md:text-3xl font-extralight text-black">FLOOR GUIDE</h3>
             </div>
             <div className="flex items-center justify-center mb-10">
               <div className="w-full max-w-5xl md:max-w-6xl">

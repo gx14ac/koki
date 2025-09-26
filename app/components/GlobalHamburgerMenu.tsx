@@ -90,10 +90,11 @@ export default function GlobalHamburgerMenu() {
         }} 
       />
 
-      {/* 背景ブラー用オーバーレイ（メニューの背面に表示） */}
+      {/* 背景オーバーレイ（メニューの背面に表示） */}
       {shouldShowBackdrop && (
         <div
-          className="fixed inset-0 z-[180] bg-black/10 backdrop-blur-[2px] md:backdrop-blur-[3px] transition-opacity duration-300"
+          className="fixed inset-0 z-[180] transition-opacity duration-300"
+          style={{ backgroundColor: 'rgba(245, 245, 245, 0.6)' }}
           aria-hidden="true"
         />
       )}

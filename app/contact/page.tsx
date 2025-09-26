@@ -27,10 +27,10 @@ export default function Contact() {
       {/* 左上ロゴは共通コンポーネントで固定表示されるため削除 */}
       
       {/* コンテンツエリア */}
-      <div className="w-full flex items-center justify-center pt-40 pl-10">
-        <div className="flex flex-col items-center justify-center w-full">
+      <div className="w-full flex items-center justify-center pt-40 md:pt-110 pl-10">
+        <div className="flex flex-col md:flex-row items-center md:items-start justify-center w-full md:gap-50">
           {/* Auberge KOKI画像 */}
-          <div className="w-full flex justify-start items-center mb-6 pl-6 d:pl-4">
+          <div className="w-full md:w-auto flex justify-start md:justify-center items-center mb-6 md:mb-0 pl-6 md:pl-0 md:-mt-8">
             <Image
               src="/auberge_koki.png"
               alt="Auberge KOKI"
@@ -42,7 +42,7 @@ export default function Contact() {
           </div>
           
           {/* 連絡先情報 */}
-          <div className="layout-left w-full text-black flex flex-col justify-center items-start">
+          <div className="layout-left md:layout-none w-full md:w-auto text-black flex flex-col justify-center items-start">
             <div className="grid grid-cols-[80px_1fr] md:grid-cols-[100px_1fr] gap-y-2 md:gap-y-4 md:gap-x-4 text-xs md:text-lg">
                 <span className="font-light">MAIL</span>
                 <a href="mailto:aubergekoki@gmail.com" className="hover:no-underline">aubergekoki@gmail.com</a>
@@ -70,8 +70,8 @@ export default function Contact() {
       <div className="block md:hidden mt-40">
         <SectionBar variant="mobile-large" />
       </div>
-      <div className="hidden md:block mb-8">
-        <SectionBar variant="more-left" />
+      <div className="hidden md:block mt-70">
+        <SectionBar variant="centered" />
       </div>
     </div>
   );

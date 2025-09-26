@@ -1,10 +1,35 @@
 "use client";
 
+import { useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import SectionBar from "../components/SectionBar";
 
 export default function About() {
+  // webの時のみスクロールを無効化
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth >= 768) {
+        document.body.style.overflow = 'hidden';
+        document.body.style.height = '100vh';
+      } else {
+        document.body.style.overflow = '';
+        document.body.style.height = '';
+      }
+    };
+
+    // 初回実行
+    handleResize();
+    
+    // リサイズ時に実行
+    window.addEventListener('resize', handleResize);
+    
+    return () => {
+      document.body.style.overflow = '';
+      document.body.style.height = '';
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
 
   return (
     <div className="font-sans relative flex flex-col">
@@ -51,12 +76,12 @@ export default function About() {
       
 
       {/* 2枚の画像を左右に継ぎ目なく長方形で配置 */}
-      <div className="hidden md:flex w-full items-center pt-12 justify-center">
+      <div className="hidden md:flex w-full items-center pt-50 justify-center">
         <div className="w-full max-w-[1000px] lg:max-w-[1200px] px-4 md:px-6">
           <div className="relative w-full aspect-[14/9] md:aspect-[16/9]">
             {/* 左の縦書きキャプション */}
             <div
-              className="absolute top-1/2 -translate-y-1/2 left-2 md:left-0 lg:-left-12 xl:-left-20 2xl:-left-24 z-10 text-black leading-relaxed tracking-wide text-[15px] whitespace-pre break-keep"
+              className="absolute top-1/2 -translate-y-1/2 left-2 md:left-0 lg:-left-12 xl:-left-20 2xl:-left-40 z-10 text-black leading-relaxed tracking-wide text-[15px] md:text-xl whitespace-pre break-keep"
               style={{ writingMode: 'vertical-rl', textOrientation: 'mixed' }}
             >
               {`山を扱く、なにもないようでなんでもある。\n二十四節季の記憶を耕す。`}
@@ -87,11 +112,11 @@ export default function About() {
       </div>
       
       {/* aboutページ専用のフッター表示 */}
-      <div className="block md:hidden mt-34">
+      <div className="block md:hidden mt-16">
         <SectionBar variant="mobile-large" />
       </div>
-      <div className="hidden md:block mt-10">
-        <SectionBar variant="more-left" />
+      <div className="hidden md:block mt-20">
+        <SectionBar variant="centered" />
       </div>
     </div>
   );

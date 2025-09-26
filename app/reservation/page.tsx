@@ -5,7 +5,7 @@ import SectionBar from "../components/SectionBar";
 
 export default function Reservation() {
   return (
-    <div className="font-sans min-h-screen relative flex flex-col text-black overflow-x-hidden">
+    <div>
       {/* モバイル版（スクショ準拠） */}
       <div className="block md:hidden pt-10">
 
@@ -87,7 +87,7 @@ export default function Reservation() {
             </div>
 
             {/* DINNER & STAY */}
-            <div className="mt-12">
+            <div>
               <h3 className="text-[18px] tracking-wide font-medium">DINNER & STAY</h3>
               <p className="text-[12px] mt-1">お食事＋ご宿泊のプラン</p>
 
@@ -155,23 +155,22 @@ export default function Reservation() {
       </div>
 
       {/* タブレット/PC版（従来レイアウト） */}
-      <div className="hidden md:block">
-        <section className="w-full text-black pt-32 md:pt-48 flex-1">
+      <div className="hidden md:block -mt-20">
+        <section className="w-full text-black">
           {/* 左上ロゴは共通コンポーネントで固定表示されるため削除 */}
 
-          <div className="max-w-7xl mx-auto pl-2 pr-8 md:pl-2 md:pr-12 pb-10 md:pb-14">
-            <div className="grid grid-cols-1 md:grid-cols-2 justify-center gap-12 md:gap-24 lg:gap-32 xl:gap-40">
+          <div className="max-w-7xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-12 lg:gap-14 xl:gap-18">
               {/* 左カラム：左レール見出し（DINNER）＋ コンテンツ */}
-              <div className="w-full">
-                <div className="flex items-start gap-8">
+              <div className="w-full" style={{ marginLeft: '-80px' }}>
+                <div className="flex items-start gap-2">
                   <div className="w-[200px] shrink-0 text-left leading-tight">
                     <h2 className="text-[28px] tracking-wide">DINNER</h2>
                     <p className="text-[14px] text-black mt-1">お食事のみのプラン</p>
                   </div>
-                  <div className="flex-1 text-[16px]">
-                    <h3 className="text-[20px] font-light mb-1">Course</h3>
+                  <div className="flex-1 text-[16px] space-x-20">
+                    <h3 className="text-[20px] font-light mb-2">Course</h3>
                     <div className="border-b border-gray-400 mb-6 overflow-x-auto">
-                      <p className="text-[15px] text-black leading-relaxed mb-2 whitespace-nowrap">野菜や果実、山々に自生する野草を13品程のコース料理に</p>
                     </div>
                     <div className="space-y-7">
                       <div className="border-b border-gray-400 pb-6">
@@ -196,9 +195,9 @@ export default function Reservation() {
 
                     <p className="text-[14px] md:text-[14px] text-black mt-4">※ 価格表記は全て税込価格、サービス料は別になります。</p>
 
-                    <h2 className="text-[24px] tracking-wide mt-24 mb-2 inline-block border-b border-gray-500 pb-2">RESERVATION</h2>
+                    <h2 className="text-[24px] tracking-wide mt-20 mb-2 inline-block border-b border-gray-500 pb-2">RESERVATION</h2>
                     <div className="space-y-6">
-                      <div>
+                      <div className="mt-4">
                         <p>お電話でのご予約</p>
                         <p>
                           <a href="tel:0554522781" className="hover:no-underline">0554-52-2781</a>
@@ -215,10 +214,10 @@ export default function Reservation() {
                             TableCheckでのご予約
                           </a>
                         </p>
-                    <p className="text-[11px] leading-relaxed">
+                    <p className="text-[12px] leading-relaxed whitespace-nowrap mt-4">
                       ご宿泊をご希望のお客様は、5日までにご予約くださいますようお願い申し上げます。
                     </p>
-                    <p className="text-[11px] leading-relaxed mb-8">
+                    <p className="text-[12px] leading-relaxed mb-8 whitespace-nowrap">
                       お食事のみをご希望のお客様は、3日までにご予約をお願いいたします。
                     </p>
                         <div className="w-10 h-px bg-gray-500 my-8" />
@@ -244,7 +243,7 @@ export default function Reservation() {
 
               {/* 右カラム：DINNER＆STAY＋コンテンツ */}
               <div className="w-full">
-                <div className="flex items-start gap-16 md:gap-10 lg:gap-24">
+                <div className="flex items-start gap-18">
                   <div className="w-[200px] shrink-0 text-left leading-tight">
                     <h2 className="text-[28px] tracking-wide whitespace-nowrap">DINNER＆STAY</h2>
                     <p className="text-[14px] text-black mt-1">お食事+ご宿泊のプラン</p>
