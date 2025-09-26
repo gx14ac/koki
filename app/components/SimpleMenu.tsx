@@ -172,7 +172,7 @@ export default function SimpleMenu({ onClose, onMenuSelect, isDark = false }: Si
         />
         
         {/* メニューアイテム - モバイルは左端に少し余白を持たせる */}
-        <div className="flex flex-col justify-start md:justify-center pt-48 md:pt-16 pl-8 pr-8 md:pl-0 md:pr-16 lg:pr-20 items-start md:items-end">
+        <div className="flex flex-col justify-start pt-60 md:pt-50 pl-8 pr-8 md:pl-0 md:pr-16 lg:pr-20 items-start md:items-end">
           <motion.nav 
             className="space-y-6 lg:space-y-8"
           >
