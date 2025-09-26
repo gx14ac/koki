@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import SectionBar from "../components/SectionBar";
 
@@ -8,21 +7,9 @@ export default function Reservation() {
   return (
     <div className="font-sans min-h-screen relative flex flex-col text-black overflow-x-hidden">
       {/* モバイル版（スクショ準拠） */}
-      <div className="block md:hidden">
+      <div className="block md:hidden pt-10">
 
-      {/* モバイル用ロゴ画像 */}
-      <div className="block md:hidden w-full max-w-[640px] mx-auto px-5 mt-8 pb-4">
-        <Link href="/" className="transition-transform hover:scale-105 inline-block">
-          <Image
-            src="/koki_vert_white_logo.png"
-            alt="KOKI"
-            width={80}
-            height={54}
-            priority
-            className="filter invert"
-          />
-        </Link>
-      </div>
+      {/* 左上ロゴは共通コンポーネントで固定表示されるため削除 */}
 
         {/* 本文 */}
         <section className="w-full">
@@ -170,18 +157,7 @@ export default function Reservation() {
       {/* タブレット/PC版（従来レイアウト） */}
       <div className="hidden md:block">
         <section className="w-full text-black pt-32 md:pt-48 flex-1">
-          <div className="absolute top-16 left-16 lg:left-20 z-10">
-            <Link href="/" className="transition-transform hover:scale-105">
-              <Image
-                src="/koki_vert_white_logo.png"
-                alt="KOKI"
-                width={120}
-                height={160}
-                priority
-                className="filter invert"
-              />
-            </Link>
-          </div>
+          {/* 左上ロゴは共通コンポーネントで固定表示されるため削除 */}
 
           <div className="max-w-7xl mx-auto pl-2 pr-8 md:pl-2 md:pr-12 pb-10 md:pb-14">
             <div className="grid grid-cols-1 md:grid-cols-2 justify-center gap-12 md:gap-24 lg:gap-32 xl:gap-40">
@@ -342,13 +318,7 @@ export default function Reservation() {
         </section>
       </div>
 
-      {/* モバイルは大きめのセクションバー、PCは従来 */}
-      <div className="block md:hidden">
-        <SectionBar variant="mobile-large" />
-      </div>
-      <div className="hidden md:block">
-        <SectionBar variant="more-left" />
-      </div>
+      {/* フッターは共通レイアウトで表示 */}
     </div>
   );
 }

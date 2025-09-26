@@ -14,8 +14,8 @@
   font-family: 'A-OTF 中ゴシックBBB Pr5 Medium';
   src:
     local('A-OTF 中ゴシックBBB Pr5 Medium'),
-    url('/fonts/A-OTF-ChuGoBBBPr5-Medium.woff2') format('woff2'),
-    url('/fonts/A-OTF-ChuGoBBBPr5-Medium.otf') format('opentype');
+    url('/A-OTF-GothicBBBPr5-Medium.woff2') format('woff2'),
+    url('/A-OTF-GothicBBBPr5-Medium.otf') format('opentype');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -26,9 +26,33 @@
   font-family: 'A-OTF 中ゴシックBBB Pr5 Medium';
   src:
     local('A-OTF 中ゴシックBBB Pr5 Medium'),
-    url('/fonts/A-OTF-ChuGoBBBPr5-Medium.woff2') format('woff2'),
-    url('/fonts/A-OTF-ChuGoBBBPr5-Medium.otf') format('opentype');
+    url('/A-OTF-GothicBBBPr5-Medium.woff2') format('woff2'),
+    url('/A-OTF-GothicBBBPr5-Medium.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+3000-303F, U+3040-309F, U+30A0-30FF, U+4E00-9FFF, U+FF00-FFEF;
+}
+@font-face {
+  font-family: 'A-OTF 中ゴシックBBB Pr5 Medium';
+  src:
+    local('A-OTF 中ゴシックBBB Pr5 Medium'),
+    url('/A-OTF-GothicBBBPr5-Medium.woff2') format('woff2'),
+    url('/A-OTF-GothicBBBPr5-Medium.otf') format('opentype');
   font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+3000-303F, U+3040-309F, U+30A0-30FF, U+4E00-9FFF, U+FF00-FFEF;
+}
+
+/* weight 200（extralight）も同ファイルに割り当ててフォールバックを防止 */
+@font-face {
+  font-family: 'A-OTF 中ゴシックBBB Pr5 Medium';
+  src:
+    local('A-OTF 中ゴシックBBB Pr5 Medium'),
+    url('/A-OTF-GothicBBBPr5-Medium.woff2') format('woff2'),
+    url('/A-OTF-GothicBBBPr5-Medium.otf') format('opentype');
+  font-weight: 200;
   font-style: normal;
   font-display: swap;
   unicode-range: U+3000-303F, U+3040-309F, U+30A0-30FF, U+4E00-9FFF, U+FF00-FFEF;
@@ -240,6 +264,10 @@ body {
   pointer-events: none;
   animation: droplet 0.8s ease-out;
 }
+
+/* レイアウト共通: ヘッダーロゴの左オフセットに合わせる */
+.layout-left { padding-left: 2.0rem; }
+@media (min-width: 768px) { .layout-left { padding-left: 2.5rem; } }
 
 /* メニュー開時にホーム中央ロゴを隠す（モバイルのみ） */
 @media (max-width: 767px) {

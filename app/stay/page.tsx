@@ -1,10 +1,8 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
 import { useLocale } from "../contexts/LocaleContext";
 import { useState, useEffect } from "react";
-import SectionBar from "../components/SectionBar";
 
 export default function Stay() {
   const { t, locale } = useLocale();
@@ -30,37 +28,11 @@ export default function Stay() {
   }, [iroriImages.length]);
 
   return (
-    <div className="font-sans min-h-screen relative flex flex-col">
-      {/* KOKIロゴ - 左上（PC/Tabletのみ画像ロゴ） */}
-      <div className="absolute top-16 left-16 lg:left-20 z-10 hidden md:block">
-        <Link href="/" className="transition-transform hover:scale-105">
-          <Image
-            src="/koki_vert_white_logo.png"
-            alt="KOKI"
-            width={120}
-            height={160}
-            priority
-            className="filter invert"
-          />
-        </Link>
-      </div>
-
-      {/* モバイル用ロゴ画像 */}
-      <div className="block md:hidden w-full max-w-[640px] mx-auto px-5 mt-8 pb-4">
-        <Link href="/" className="transition-transform hover:scale-105 inline-block">
-          <Image
-            src="/koki_vert_white_logo.png"
-            alt="KOKI"
-            width={80}
-            height={54}
-            priority
-            className="filter invert"
-          />
-        </Link>
-      </div>
+    <div className="font-sans min-h-screen relative flex flex-col pt-6">
+      {/* 左上ロゴは共通コンポーネントで固定表示されるため削除 */}
       
       {/* コンテンツエリア - 全体画面で中央配置 */}
-      <div className="w-full flex flex-col items-center justify-center pt-6 md:pt-48 flex-1">
+      <div className="w-full flex flex-col items-center justify-center md:pt-48 flex-1">
 
       {/* KINOMA 詳細セクション */}
         <div className="w-full mx-auto">
@@ -100,7 +72,7 @@ export default function Stay() {
         </div>
 
       {/* IRORI 詳細セクション */}
-        <div className="w-full mx-auto mt-20">
+        <div className="w-full mx-auto mt-16">
           {/* IROIタイトルとテキスト情報 */}
           <div className="text-center mb-3">
           <h3 className="text-xl font-light mb-2 text-black">{t('stay.irori.title')}</h3>
@@ -195,8 +167,8 @@ export default function Stay() {
         </div>
 
             {/* FLOOR GUIDE */}
-            <div className="text-center mb-10">
-              <h3 className="text-xl font-light text-black">FLOOR GUIDE</h3>
+            <div className="text-center mb-12">
+              <h3 className="text-lg font-extralight text-black">FLOOR GUIDE</h3>
             </div>
             <div className="flex items-center justify-center mb-10">
               <div className="w-full max-w-5xl md:max-w-6xl">
@@ -212,13 +184,7 @@ export default function Stay() {
             </div>
 
       </div>
-      {/* セクションバー: モバイルはコンパクト版、PCは従来 */}
-      <div className="block md:hidden">
-        <SectionBar variant="mobile-large" />
-      </div>
-      <div className="hidden md:block">
-        <SectionBar variant="more-left" />
-      </div>
+      {/* フッターは共通レイアウトで表示 */}
     </div>
   );
 }

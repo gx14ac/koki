@@ -1,68 +1,59 @@
 "use client";
 
+import { useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import SectionBar from "../components/SectionBar";
 
 export default function Contact() {
+  // contactページでスクロールを無効化とレイアウト調整
+  useEffect(() => {
+    document.body.style.overflow = 'hidden';
+    document.body.style.height = '100vh';
+    // レンダリング安定化のため
+    const timeout = setTimeout(() => {
+      // DOMが完全に描画された後の微調整
+    }, 0);
+    
+    return () => {
+      document.body.style.overflow = '';
+      document.body.style.height = '';
+      clearTimeout(timeout);
+    };
+  }, []);
 
   return (
-    <div className="font-sans min-h-screen relative flex flex-col">
-      {/* KOKIロゴ - 左上（PCは画像 / Mobileはテキスト） */}
-      <div className="absolute top-16 left-16 lg:left-20 z-10 hidden md:block">
-        <Link href="/" className="transition-transform hover:scale-105">
-          <Image
-            src="/koki_vert_white_logo.png"
-            alt="KOKI"
-            width={120}
-            height={160}
-            priority
-            className="filter invert"
-          />
-        </Link>
-      </div>
-      <div className="block md:hidden w-full max-w-[640px] mx-auto px-5 mt-8 pb-4">
-        <Link href="/" className="transition-transform hover:scale-105 inline-block">
-          <Image
-            src="/koki_vert_white_logo.png"
-            alt="KOKI"
-            width={80}
-            height={54}
-            priority
-            className="filter invert"
-          />
-        </Link>
-      </div>
+    <div className="font-sans relative flex flex-col h-screen overflow-x-hidden min-h-screen">
+      {/* 左上ロゴは共通コンポーネントで固定表示されるため削除 */}
       
       {/* コンテンツエリア */}
-      <div className="w-full flex items-center justify-center flex-1 md:pt-48">
-        <div className="w-full max-w-6xl pl-8 pr-6 md:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-12 items-start pl-2 md:pl-0">
-            {/* 左側 - タイトル（画像） */}
-            <div className="flex items-start md:justify-start justify-center">
-              <Image
-                src="/auberge_koki.png"
-                alt="Auberge KOKI"
-                width={280}
-                height={120}
-                className="object-contain block w-40 h-auto md:w-[280px] md:h-[120px]"
-                priority
-              />
-            </div>
-            
-            {/* 右側 - 連絡先情報 */}
-            <div className="text-black self-start pl-6 pt-2 md:pt-4">
-              <div className="grid grid-cols-[100px_1fr] md:grid-cols-[120px_1fr] gap-y-4 md:gap-y-6 md:gap-x-8 text-sm md:text-xl mx-auto max-w-[440px] md:max-w-none">
-                <span className="font-medium">MAIL</span>
-                <a href="mailto:aubergekoki@gmail.com" className="underline hover:no-underline">aubergekoki@gmail.com</a>
+      <div className="w-full flex items-center justify-center pt-40 pl-10">
+        <div className="flex flex-col items-center justify-center w-full">
+          {/* Auberge KOKI画像 */}
+          <div className="w-full flex justify-start items-center mb-6 pl-6 d:pl-4">
+            <Image
+              src="/auberge_koki.png"
+              alt="Auberge KOKI"
+              width={280}
+              height={120}
+              className="object-contain block w-40 h-auto md:w-[280px] md:h-[120px]"
+              priority
+            />
+          </div>
+          
+          {/* 連絡先情報 */}
+          <div className="layout-left w-full text-black flex flex-col justify-center items-start">
+            <div className="grid grid-cols-[80px_1fr] md:grid-cols-[100px_1fr] gap-y-2 md:gap-y-4 md:gap-x-4 text-xs md:text-lg">
+                <span className="font-light">MAIL</span>
+                <a href="mailto:aubergekoki@gmail.com" className="hover:no-underline">aubergekoki@gmail.com</a>
 
-                <span className="font-medium">TEL</span>
-                <a href="tel:0554522781" className="underline hover:no-underline">0554-52-2781</a>
+                <span className="font-light">TEL</span>
+                <a href="tel:0554522781" className="hover:no-underline">0554-52-2781</a>
 
-                <span className="font-medium">Instagram</span>
-                <a href="https://www.instagram.com/aubergekoki/" target="_blank" rel="noopener noreferrer" className="underline hover:no-underline">@aubergekoki</a>
+                <span className="font-light">Instagram</span>
+                <a href="https://www.instagram.com/aubergekoki/" target="_blank" rel="noopener noreferrer" className="hover:no-underline">@aubergekoki</a>
 
-                <span className="font-medium">Address</span>
+                <span className="font-light">Address</span>
                 <div>
                   <div>〒402-0213</div>
                   <div>山梨県南都留郡道志村谷相7383-2</div>
@@ -74,11 +65,12 @@ export default function Contact() {
             </div>
           </div>
         </div>
-      </div>
-      <div className="block md:hidden">
+      
+      {/* contactページ専用のフッター表示 */}
+      <div className="block md:hidden mt-40">
         <SectionBar variant="mobile-large" />
       </div>
-      <div className="hidden md:block">
+      <div className="hidden md:block mb-8">
         <SectionBar variant="more-left" />
       </div>
     </div>
