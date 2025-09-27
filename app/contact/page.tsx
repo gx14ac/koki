@@ -45,7 +45,7 @@ export default function Contact() {
           
           {/* 連絡先情報 */}
           <div className="layout-left md:layout-none w-full md:w-auto text-black flex flex-col justify-center items-start">
-            <div className="grid grid-cols-[90px_1fr] md:grid-cols-[100px_1fr] gap-y-3 md:gap-y-4 md:gap-x-6 text-sm md:text-lg">
+            <div className="grid grid-cols-[90px_1fr] md:grid-cols-[100px_1fr] gap-y-3 md:gap-y-4 md:gap-x-6 text-sm md:text-[16px]">
                 <span className="font-light">MAIL</span>
                 <a href="mailto:aubergekoki@gmail.com" className="hover:no-underline">aubergekoki@gmail.com</a>
 
@@ -60,7 +60,7 @@ export default function Contact() {
                   <div>〒402-0213</div>
                   <div>山梨県南都留郡道志村谷相7383-2</div>
                   <div className="mt-3">
-                    <a href="https://maps.app.goo.gl/wzpyAXsDesZ4mmiq9?g_st=ic" target="_blank" rel="noopener noreferrer" className="underline hover:no-underline">Google Map</a>
+                    <a href="https://maps.app.goo.gl/wzpyAXsDesZ4mmiq9?g_st=ic" target="_blank" rel="noopener noreferrer" className="underline hover:no-underline text-[14px]">Google Map</a>
                   </div>
                 </div>
               </div>

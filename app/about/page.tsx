@@ -84,7 +84,7 @@ export default function About() {
           <div className="relative w-full aspect-[14/9] md:aspect-[16/9]">
             {/* 左の縦書きキャプション */}
             <div
-              className="absolute top-1/2 -translate-y-1/2 left-2 md:left-0 lg:-left-12 xl:-left-20 2xl:-left-40 z-10 text-black leading-relaxed tracking-wide text-[15px] md:text-xl whitespace-pre break-keep"
+              className="absolute top-1/2 -translate-y-1/2 left-2 md:left-0 lg:-left-12 xl:-left-20 2xl:-left-40 z-10 text-black leading-relaxed tracking-wide text-[15px] md:text-[18px] whitespace-pre break-keep"
               style={{ writingMode: 'vertical-rl', textOrientation: 'mixed' }}
             >
               {`山を扱く、なにもないようでなんでもある。\n二十四節季の記憶を耕す。`}

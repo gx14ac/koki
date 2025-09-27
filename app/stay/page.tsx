@@ -38,9 +38,9 @@ export default function Stay() {
         <div className="w-full mx-auto">
           {/* KINOMAタイトルとテキスト情報 */}
           <div className="text-center mb-3">
-                        <h3 className="text-xl md:text-[30px] font-light mb-3 md:mb-8 text-black">{t('stay.kinoma.title')}</h3>
-            <p className="text-light text-black text-xs md:text-base">{t('stay.kinoma.concept.jp')}</p>
-            <p className="text-light text-black mb-3 md:mb-8 text-xs md:text-base">{t('stay.kinoma.description.jp')}</p>
+                        <h3 className="text-xl md:text-[30px] font-light mb-4 md:mb-4 text-black">{t('stay.kinoma.title')}</h3>
+            <p className="text-light md:text-[16px] text-black text-xs md:text-base">{t('stay.kinoma.concept.jp')}</p>
+            <p className="text-light md:text-[16px] text-black mb-3 md:mb-8 text-xs md:text-base">{t('stay.kinoma.description.jp')}</p>
           </div>
           
           {/* KINOMA画像 - フェード切替（ドット付き） */}
@@ -56,7 +56,7 @@ export default function Stay() {
                   </div>
                 ))}
                 {/* dots inside slider */}
-                <div className="absolute bottom-2 left-1/2 -translate-x-1/2 flex items-center gap-2">
+                <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex items-center gap-2">
                   {konomaImages.map((_, i) => (
                     <button
                       key={i}
@@ -75,9 +75,9 @@ export default function Stay() {
         <div className="w-full mx-auto mt-16 md:mt-34">
           {/* IROIタイトルとテキスト情報 */}
           <div className="text-center mb-3">
-          <h3 className="text-xl md:text-[30px] font-light md:mb-8 mb-3 text-black">{t('stay.irori.title')}</h3>
-                        <p className="text-light text-black text-xs md:text-base">{t('stay.irori.concept.jp')}</p>
-            <p className="text-light text-black md:mb-8 mb-3 text-xs md:text-base">{t('stay.irori.description.jp')}</p>
+          <h3 className="text-xl md:text-[30px] font-light md:mb-4 mb-3 text-black">{t('stay.irori.title')}</h3>
+                        <p className="text-light text-black text-xs md:text-[16px]">{t('stay.irori.concept.jp')}</p>
+            <p className="text-light text-black md:mb-8 mb-3 text-xs md:text-[16px]">{t('stay.irori.description.jp')}</p>
           </div>
           
           {/* IRORI画像 - フェード切替（ドット付き） */}
@@ -93,7 +93,7 @@ export default function Stay() {
                   </div>
                 ))}
                 {/* dots inside slider */}
-                <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex items-center gap-2">
+                <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex items-center gap-2">
                   {iroriImages.map((_, i) => (
                     <button
                       key={i}
@@ -120,27 +120,27 @@ export default function Stay() {
               </div>
             </div>
             {/* Desktop: 2つの項目を中央に配置 */}
-            <div className="hidden md:flex md:items-center md:justify-center md:gap-60 mb-20 md:text-xl">
+            <div className="hidden md:flex md:items-center md:justify-center md:gap-60 mb-20 md:text-[20px]">
               <div className="inline-block border-b border-gray-400 pb-1">チェックイン 15:00〜</div>
               <div className="inline-block border-b border-gray-400 pb-1">チェックアウト 〜11:00</div>
             </div>
 
             <hr className="border-gray-400 border-1.5 my-8 mt-16" />
             {/* 設備・アメニティ */}
-            <div className="grid grid-cols-[110px_1fr] md:grid-cols-[160px_1fr] gap-x-4 md:gap-x-10 gap-y-6 py-1 text-sm md:text-lg items-center">
-              <div className="font-light text-[12px] md:text-xl">設備・アメニティ</div>
+            <div className="grid grid-cols-[110px_1fr] md:grid-cols-[160px_1fr] gap-x-4 md:gap-x-24 gap-y-6 py-1 items-center">
+              <div className="font-light text-[12px] md:text-[20px]">設備・アメニティ</div>
               <div>
-                <p className="whitespace-pre-wrap leading-tight md:leading-relaxed text-[10px] md:text-base">
-                  ドライヤー / ソープ類(シャンプー・リンス・ボディソープ) / タオル類（フェイスタオル・バスタオル） / ボディタオル / 歯ブラシ / メンズ用髭剃り / コーム / ティッシュケース / ハンガー / スリッパ / 冷蔵庫 / Wi‑Fi 完備
+                <p className="whitespace-pre-wrap leading-tight md:leading-relaxed text-[10px] md:text-[16px]">
+                  ドライヤー / ソープ類（シャンプー・リンス・ボディソープ） / タオル類（フェイスタオル・バスタオル） / ボディタオル歯ブラシ / メンズ用髭剃り / コーム / ティッシュケース / ハンガー / スリッパ / 冷蔵庫 / Wi-Fi 完備 / 風呂トイレ別 / 独立洗面台
                 </p>
               </div>
             </div>
             <hr className="border-gray-400 border-1.5 my-8" />
 
             {/* 注意事項 */}
-            <div className="grid grid-cols-[110px_1fr] md:grid-cols-[160px_1fr] md:gap-x-10 gap-y-6 py-1 text-sm md:text-lg items-center">
-              <div className="font-light text-[12px] md:text-xl">注意事項</div>
-              <div className=" whitespace-pre-wrap leading-tight md:leading-relaxed text-[10px] md:text-base px-3">
+            <div className="grid grid-cols-[110px_1fr] md:grid-cols-[160px_1fr] md:gap-x-24 gap-y-6 py-1 items-center">
+              <div className="font-light text-[12px] md:text-[20px]">注意事項</div>
+              <div className=" whitespace-pre-wrap leading-tight md:leading-relaxed text-[10px] md:text-[16px] px-3">
                 <p>・ご滞在中は終日禁煙とさせていただいております。（電子タバコ含む） </p>
                 <p>ご不便をおかけいたしますが、喫煙エリアをご利用ください。</p>
                 <br></br>
@@ -154,9 +154,9 @@ export default function Stay() {
             <hr className="border-gray-400 border-1.5 my-8" />
 
             {/* キャンセル料 */}
-            <div className="grid grid-cols-[120px_1fr] md:grid-cols-[160px_1fr] md:gap-x-10 gap-y-6 py-1 text-sm md:text-lg items-center">
-              <div className="font-light text-[12px] md:text-xl">キャンセル料</div>
-              <div className=" whitespace-pre-wrap leading-tight md:leading-relaxed text-[10px] md:text-base">
+            <div className="grid grid-cols-[120px_1fr] md:grid-cols-[160px_1fr] md:gap-x-24 gap-y-6 py-1 items-center">
+              <div className="font-light text-[12px] md:text-[20px]">キャンセル料</div>
+              <div className=" whitespace-pre-wrap leading-tight md:leading-relaxed text-[10px] md:text-[16px]">
                 <p>5日前〜 ご予約料金の50%</p>
                 <p>3日前（72時間前）〜 ご予約料金の100%</p>
               </div>
