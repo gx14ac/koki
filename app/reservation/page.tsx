@@ -164,6 +164,9 @@ export default function Reservation() {
             {/* モバイルのコピーライトは SectionBar に任せるため、ここでは表示しない */}
           </div>
         </section>
+        
+        {/* モバイル版でのコンテンツ下部スペース */}
+        <div className="mb-4"></div>
       </div>
 
       {/* タブレット/PC版（従来レイアウト） */}
@@ -293,7 +296,7 @@ export default function Reservation() {
                     </div>
                     <p className="text-[14px] md:text-[14px] text-black mt-4">※ 3名宿泊の場合は、お部屋のご料金を¥55,000（税込）にてご案内させて頂きます。</p>
 
-                    <h3 className="text-[20px] tracking-wide mt-8 mb-2">IRORI</h3>
+                    <h3 className="text-[20px] tracking-wide mt-20 mb-2">IRORI</h3>
                     <div className="border-b border-gray-400 mb-6 overflow-x-auto">
                       <p className="text-[15px] text-black mb-2 whitespace-nowrap">囲炉裏、ウッドデッキ付きのお部屋（1〜2名）</p>
                     </div>
