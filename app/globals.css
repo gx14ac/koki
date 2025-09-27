@@ -88,6 +88,28 @@ body {
   font-synthesis: none; /* 擬似的なボールド/イタリック生成を禁止 */
 }
 
+/* 全ての要素に日本語フォントを適用 */
+* {
+  font-family: 'A-OTF 中ゴシックBBB Pr5 Medium', 'Helvetica Regular', 'Helvetica', 'Helvetica Neue', Arial, sans-serif;
+}
+
+/* 特に日本語文字（ひらがな、カタカナ、漢字）に確実に適用 */
+*:lang(ja),
+[lang="ja"],
+[lang="ja-JP"] {
+  font-family: 'A-OTF 中ゴシックBBB Pr5 Medium', 'Helvetica Regular', 'Helvetica', 'Helvetica Neue', Arial, sans-serif;
+}
+
+/* 見出し要素にも確実に適用 */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'A-OTF 中ゴシックBBB Pr5 Medium', 'Helvetica Regular', 'Helvetica', 'Helvetica Neue', Arial, sans-serif;
+}
+
+/* 段落やスパンなどのテキスト要素にも確実に適用 */
+p, span, div, a, li, td, th, label, input, textarea, button {
+  font-family: 'A-OTF 中ゴシックBBB Pr5 Medium', 'Helvetica Regular', 'Helvetica', 'Helvetica Neue', Arial, sans-serif;
+}
+
 /* モバイル時は全体のフォントサイズを少しだけ小さくする */
 @media (max-width: 767px) {
   body { font-size: 15px; }

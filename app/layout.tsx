@@ -30,7 +30,7 @@ export const metadata: Metadata = {
   creator: "Auberge Koki",
   publisher: "Auberge Koki",
   icons: {
-    icon: "/ogp.png",
+    icon: "/koki_vert_white_logo.png",
   },
   openGraph: {
     title: "Auberge Koki",
@@ -78,6 +78,7 @@ export default function RootLayout({
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${inter.variable} antialiased bg-[rgb(245,245,245)] font-sans flex flex-col`}
+        suppressHydrationWarning={true}
       >
         <LocaleProvider>
           <GlobalHamburgerMenu />

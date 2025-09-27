@@ -5,13 +5,14 @@ import SectionBar from "./SectionBar";
 
 export default function FooterSection() {
   const pathname = usePathname();
+  const isHome = pathname === "/";
   const isAbout = pathname === "/about";
   const isContact = pathname === "/contact";
   const isReservation = pathname === "/reservation";
   const isStay = pathname === "/stay";
 
-  // aboutページとcontactページの場合は何も表示しない（page.tsxで直接SectionBarを表示）
-  if (isAbout || isContact) {
+  // TOPページ、aboutページ、contactページの場合は何も表示しない
+  if (isHome || isAbout || isContact) {
     return null;
   }
 
