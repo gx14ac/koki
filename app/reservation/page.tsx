@@ -1,9 +1,21 @@
 "use client";
 
+import { useEffect } from "react";
 import Link from "next/link";
 import SectionBar from "../components/SectionBar";
 
 export default function Reservation() {
+  // ページ読み込み時に最上部へスクロール
+  useEffect(() => {
+    // 即座に実行
+    window.scrollTo(0, 0);
+    // 少し遅延して再実行（確実性のため）
+    const timeout = setTimeout(() => {
+      window.scrollTo(0, 0);
+    }, 50);
+    return () => clearTimeout(timeout);
+  }, []);
+
   return (
     <div>
       {/* モバイル版（スクショ準拠） */}
@@ -88,7 +100,7 @@ export default function Reservation() {
 
             {/* DINNER & STAY */}
             <div>
-              <h3 className="text-[18px] tracking-wide font-medium">DINNER & STAY</h3>
+              <h3 className="text-[18px] tracking-wide font-medium pt-16">DINNER & STAY</h3>
               <p className="text-[12px] mt-1">お食事＋ご宿泊のプラン</p>
 
               {/* KONOMA */}
@@ -168,7 +180,7 @@ export default function Reservation() {
                     <h2 className="text-[28px] tracking-wide">DINNER</h2>
                     <p className="text-[14px] text-black mt-1">お食事のみのプラン</p>
                   </div>
-                  <div className="flex-1 text-[16px] space-x-20">
+                  <div className="flex-1 text-[16px] space-x-30">
                     <h3 className="text-[20px] font-light mb-2">Course</h3>
                     <div className="border-b border-gray-400 mb-6 overflow-x-auto">
                     </div>

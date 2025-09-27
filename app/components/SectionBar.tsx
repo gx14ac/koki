@@ -82,7 +82,7 @@ export default function SectionBar({ variant = "default" }: SectionBarProps) {
           variant === "mobile-large" 
             ? "text-[12px] text-gray-500 mb-2" 
             : variant === "centered"
-            ? "text-sm text-gray-500 mb-2"
+            ? "text-sm text-gray-500 mb-8"
             : "text-xs md:text-sm text-gray-500 mb-6"
         }>©{year} Auberge KOKI</div>
       </div>

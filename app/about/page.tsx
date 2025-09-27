@@ -6,8 +6,11 @@ import Link from "next/link";
 import SectionBar from "../components/SectionBar";
 
 export default function About() {
-  // webの時のみスクロールを無効化
+  // webの時のみスクロールを無効化と最上部リセット
   useEffect(() => {
+    // ページ読み込み時に最上部へスクロール
+    window.scrollTo(0, 0);
+    
     const handleResize = () => {
       if (window.innerWidth >= 768) {
         document.body.style.overflow = 'hidden';
@@ -76,7 +79,7 @@ export default function About() {
       
 
       {/* 2枚の画像を左右に継ぎ目なく長方形で配置 */}
-      <div className="hidden md:flex w-full items-center pt-50 justify-center">
+      <div className="hidden md:flex w-full items-center justify-center">
         <div className="w-full max-w-[1000px] lg:max-w-[1200px] px-4 md:px-6">
           <div className="relative w-full aspect-[14/9] md:aspect-[16/9]">
             {/* 左の縦書きキャプション */}
@@ -115,9 +118,11 @@ export default function About() {
       <div className="block md:hidden mt-16">
         <SectionBar variant="mobile-large" />
       </div>
-      <div className="hidden md:block mt-20">
+      <div className="hidden md:block mt-16">
         <SectionBar variant="centered" />
       </div>
+      {/* Webレイアウト用のセクションバー下部スペース */}
+      <div className="hidden md:block mb-16"></div>
     </div>
   );
 }

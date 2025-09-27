@@ -184,6 +184,9 @@ export default function Stay() {
 
       </div>
       {/* フッターは共通レイアウトで表示 */}
+      
+      {/* Webレイアウト用のセクションバー下部スペース */}
+      <div className="hidden md:block mb-1"></div>
     </div>
   );
 }
