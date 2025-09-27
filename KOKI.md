@@ -268,4 +268,4 @@ npm run lint     # ESLintチェック
 
 **最終更新**: 2025年9月
 **バージョン**: 1.0
-**作成者**: Shintaro Okumura
+k
