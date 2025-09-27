@@ -54,10 +54,8 @@ export default function Reservation() {
 
             <div className="text-[14px] space-y-2">
               <div>
-                <p className="mb-1">定休日</p>
+                <p className="">定休日</p>
                 <p>日曜日 / 月曜日</p>
-              </div>
-              <div>
                 <p>ディナー 19:00〜 / 朝食 9:00 〜</p>
                 <p>チェックイン 15:00〜 / チェックアウト 〜11:00</p>
               </div>
@@ -65,22 +63,22 @@ export default function Reservation() {
 
             <div className="w-16 h-px bg-gray-400 my-9" />
 
-            <div className="text-[14px] space-y-2">
-              <p className="mb-1">キャンセル料</p>
+            <div className="text-[14px]">
+              <p className="">キャンセル料</p>
               <p>5日前〜 ご予約料金の50%</p>
               <p>3日前（72時間前）〜 ご予約料金の100%</p>
             </div>
 
             {/* DINNER */}
             <div className="mt-12">
-              <h3 className="text-[18px] tracking-wide font-medium">DINNER</h3>
+              <h3 className="text-[18px] md:text-[24px] tracking-wide font-medium">DINNER</h3>
               <p className="text-[12px]">お食事のみのプラン</p>
 
-              <div className="mt-6">
-                <h4 className="text-[16px] font-medium mb-2">Course</h4>
+              <div className="mt-8">
+                <h4 className="text-[16px] md:text-[20px] font-medium mb-2">Course</h4>
                 <div className="border-b border-gray-300">
                 </div>
-                <ul className="text-[14px]">
+                <ul className="text-[12px]">
                   <li className="flex items-center justify-between py-6 border-b border-gray-300">
                     <span>Tasting Course</span>
                     <span className="tracking-wide">¥19,800/名</span>
@@ -132,7 +130,7 @@ export default function Reservation() {
 
               {/* IRORI */}
               <div className="mt-10">
-                <h4 className="text-[16px] tracking-wide">IRORI</h4>
+                <h4 className="text-[20px] tracking-wide">IRORI</h4>
                 <div className="border-b border-gray-300">
                   <p className="text-[10px] mb-3 whitespace-nowrap">囲炉裏、ウッドデッキ付きのお部屋（1〜2名）</p>
                 </div>
@@ -180,8 +178,8 @@ export default function Reservation() {
               <div className="w-full" style={{ marginLeft: '-80px' }}>
                 <div className="flex items-start gap-2">
                   <div className="w-[200px] shrink-0 text-left leading-tight">
-                    <h2 className="text-[28px] tracking-wide">DINNER</h2>
-                    <p className="text-[14px] text-black mt-1">お食事のみのプラン</p>
+                    <h2 className="text-[24px] tracking-wide">DINNER</h2>
+                    <p className="text-[12px] text-black mt-1">お食事のみのプラン</p>
                   </div>
                   <div className="flex-1 text-[16px] space-x-30">
                     <h3 className="text-[20px] font-light mb-2">Course</h3>
@@ -208,7 +206,7 @@ export default function Reservation() {
                       </div>
                     </div>
 
-                    <p className="text-[14px] md:text-[14px] text-black mt-4">※ 価格表記は全て税込価格、サービス料は別になります。</p>
+                    <p className="text-[12px] md:text-[12px] text-black mt-4">※ 価格表記は全て税込価格、サービス料は別になります。</p>
 
                     <h2 className="text-[24px] tracking-wide mt-20 mb-2 inline-block border-b border-gray-500 pb-2">RESERVATION</h2>
                     <div className="space-y-6">
@@ -229,23 +227,21 @@ export default function Reservation() {
                             TableCheckでのご予約
                           </a>
                         </p>
-                    <p className="text-[12px] leading-relaxed whitespace-nowrap mt-4">
+                    <p className="md:text-[14px] text-[10px] leading-relaxed whitespace-nowrap mt-4">
                       ご宿泊をご希望のお客様は、5日までにご予約くださいますようお願い申し上げます。
                     </p>
-                    <p className="text-[12px] leading-relaxed mb-8 whitespace-nowrap">
+                    <p className="md:text-[14px] text-[10px] leading-relaxed mb-8 whitespace-nowrap">
                       お食事のみをご希望のお客様は、3日までにご予約をお願いいたします。
                     </p>
                         <div className="w-10 h-px bg-gray-500 my-8" />
                       </div>
-                      <div className="space-y-">
+                      <div className="space-y-1">
                         <p>定休日</p>
                         <p>日曜日 / 月曜日</p>
-                      </div>
-                      <div className="space-y-1">
-                        <p>ディナー 19:00〜</p>
+                        <p>ディナー 19:00〜 / 朝食 9:00 〜</p>
                         <p>チェックイン 15:00〜 / チェックアウト 〜11:00</p>
                       </div>
-                      <div className="space-y-1">
+                      <div className="">
                         <div className="w-10 h-px bg-gray-500 my-8" />
                         <p>キャンセル料</p>
                         <p>5日前〜ご予約料金の50%</p>
@@ -260,13 +256,13 @@ export default function Reservation() {
               <div className="w-full">
                 <div className="flex items-start gap-18">
                   <div className="w-[200px] shrink-0 text-left leading-tight">
-                    <h2 className="text-[28px] tracking-wide whitespace-nowrap">DINNER＆STAY</h2>
-                    <p className="text-[14px] text-black mt-1">お食事+ご宿泊のプラン</p>
+                    <h2 className="text-[24px] tracking-wide whitespace-nowrap">DINNER＆STAY</h2>
+                    <p className="text-[12px] text-black mt-1">お食事+ご宿泊のプラン</p>
                   </div>
                   <div className="flex-1 text-[16px]">
                     <h3 className="text-[20px] tracking-wide mb-2">KONOMA</h3>
                     <div className="border-b border-gray-400 mb-6 overflow-x-auto">
-                      <p className="text-[15px] text-black mb-2 whitespace-nowrap">ワンルームの広々としたお部屋（1〜3名）</p>
+                      <p className="text-[12px] text-black mb-2 whitespace-nowrap">ワンルームの広々としたお部屋（1〜3名）</p>
                     </div>
                     <div className="space-y-7">
                       <div className="border-b border-gray-400 pb-6">
@@ -294,31 +290,37 @@ export default function Reservation() {
                         </div>
                       </div>
                     </div>
-                    <p className="text-[14px] md:text-[14px] text-black mt-4">※ 3名宿泊の場合は、お部屋のご料金を¥55,000（税込）にてご案内させて頂きます。</p>
+                    <p className="text-[12px] md:text-[12px] text-black mt-4">※ 3名宿泊の場合は、お部屋のご料金を¥55,000（税込）にてご案内させて頂きます。</p>
 
-                    <h3 className="text-[20px] tracking-wide mt-20 mb-2">IRORI</h3>
+                    <h3 className="text-[20px] tracking-wide mt-6 mb-2">IRORI</h3>
                     <div className="border-b border-gray-400 mb-6 overflow-x-auto">
-                      <p className="text-[15px] text-black mb-2 whitespace-nowrap">囲炉裏、ウッドデッキ付きのお部屋（1〜2名）</p>
+                      <p className="text-[14px] text-black mb-2 whitespace-nowrap">囲炉裏、ウッドデッキ付きのお部屋（1〜2名）</p>
                     </div>
                     <div className="space-y-7">
-                      <div className="border-b border-gray-400 pb-6">
-                        <div className="flex items-baseline justify-between">
-                          <span className="text-[16px]">Tasting Course<br className="hidden md:block" />-Alcohol Pairing</span>
-                          <span className="text-[16px] tracking-wide">¥57,200/名</span>
-                        </div>
-                      </div>
-                      <div className="border-b border-gray-400 pb-6">
-                        <div className="flex items-baseline justify-between">
-                          <span className="text-[16px]">Tasting Course<br className="hidden md:block" />-Non Alcohol Pairing</span>
-                          <span className="text-[16px] tracking-wide">¥55,000/名</span>
-                        </div>
-                      </div>
-                      <div className="border-b border-gray-400 pb-6">
-                        <div className="flex items-baseline justify-between">
-                          <span className="text-[16px]">朝食（オプション）</span>
-                          <span className="text-[16px] tracking-wide">¥3,300/名</span>
-                        </div>
-                      </div>
+                       <div className="border-b border-gray-400 pb-6">
+                         <div className="flex items-center justify-between">
+                           <span className="text-[16px]">Tasting Course</span>
+                           <span className="text-[16px] tracking-wide">¥44,000/名</span>
+                         </div>
+                       </div>
+                       <div className="border-b border-gray-400 pb-6">
+                         <div className="flex items-center justify-between">
+                           <span className="text-[16px]">Tasting Course<br className="hidden md:block" />-Alcohol Pairing</span>
+                           <span className="text-[16px] tracking-wide">¥57,200/名</span>
+                         </div>
+                       </div>
+                       <div className="border-b border-gray-400 pb-6">
+                         <div className="flex items-center justify-between">
+                           <span className="text-[16px]">Tasting Course<br className="hidden md:block" />-Non Alcohol Pairing</span>
+                           <span className="text-[16px] tracking-wide">¥55,000/名</span>
+                         </div>
+                       </div>
+                       <div className="border-b border-gray-400 pb-6">
+                         <div className="flex items-center justify-between">
+                           <span className="text-[16px]">朝食（オプション）</span>
+                           <span className="text-[16px] tracking-wide">¥3,300/名</span>
+                         </div>
+                       </div>
                     </div>
 
                     <div className="mt-6">
