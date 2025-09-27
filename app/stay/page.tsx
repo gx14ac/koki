@@ -109,7 +109,7 @@ export default function Stay() {
         </div>
 
         {/* ご利用案内セクション */}
-        <div className="w-full mx-auto px-8 py-12 md:py-60">
+        <div className="w-full mx-auto px-8 py-16 md:py-60">
           <div className="w-full max-w-5xl md:max-w-6xl mx-auto text-black">
             {/* チェックイン・アウト */}
             {/* Mobile: 2つのラベルを横並びで、各自の下にのみ下線 */}
