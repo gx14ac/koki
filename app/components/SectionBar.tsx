@@ -4,7 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 interface SectionBarProps {
-  variant?: "default" | "more-left" | "mobile-large";
+  variant?: "default" | "more-left" | "mobile-large" | "centered";
 }
 
 export default function SectionBar({ variant = "default" }: SectionBarProps) {
@@ -27,18 +27,25 @@ export default function SectionBar({ variant = "default" }: SectionBarProps) {
 
   const containerClasses =
     variant === "more-left"
-      ? "max-w-7xl mx-auto pl-6 pr-8 md:pl-8 md:pr-12 flex items-center justify-between text-gray-700"
+      ? "w-full layout-left pr-8 md:pr-12 flex items-center justify-between text-gray-700"
       : variant === "mobile-large"
-      ? "max-w-[640px] mx-auto pl-4 pr-4 flex flex-col items-start gap-2 text-gray-700"
-      : "max-w-7xl mx-auto pl-4 pr-4 md:pl-6 md:pr-8 flex items-center justify-between text-gray-700";
+      ? "w-full layout-left pr-4 flex flex-col items-start gap-1 text-gray-700"
+      : variant === "centered"
+      ? "w-full max-w-7xl mx-auto flex items-center justify-between text-gray-700"
+      : "w-full layout-left pr-12 md:pr-12 flex items-center justify-between text-gray-700";
 
   const navClasses =
     variant === "mobile-large"
-      ? "text-xs"
-      : "text-sm md:text-base";
+      ? "text-xs text-gray-500"
+      : variant === "centered"
+      ? "text-base text-gray-500"
+      : "text-base text-gray-500";
+
+  const footerClasses =
+    variant === "mobile-large" ? "w-full py-0" : "w-full py-6";
 
   return (
-    <footer className="w-full py-6">
+    <footer className={footerClasses}>
       <div className={containerClasses}>
         <nav className={navClasses}>
           {links.map((link, idx) => {
@@ -71,7 +78,13 @@ export default function SectionBar({ variant = "default" }: SectionBarProps) {
             );
           })}
         </nav>
-        <div className={variant === "mobile-large" ? "text-[12px] text-gray-600" : "text-xs md:text-sm text-gray-600"}>©{year} Auberge KOKI</div>
+        <div className={
+          variant === "mobile-large" 
+            ? "text-[12px] text-gray-500 mb-2" 
+            : variant === "centered"
+            ? "text-sm text-gray-500 mb-8"
+            : "text-xs md:text-sm text-gray-500 mb-6"
+        }>©{year} Auberge KOKI</div>
       </div>
     </footer>
   );

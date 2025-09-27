@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono, Inter } from "next/font/google";
 import "./globals.css";
 import GlobalHamburgerMenu from "./components/GlobalHamburgerMenu";
+import PageContainer from "./components/PageContainer";
+import FooterSection from "./components/FooterSection";
 import { LocaleProvider } from "./contexts/LocaleContext";
 
 const geistSans = Geist({
@@ -28,7 +30,7 @@ export const metadata: Metadata = {
   creator: "Auberge Koki",
   publisher: "Auberge Koki",
   icons: {
-    icon: "/ogp.png",
+    icon: "/koki_vert_white_logo.png",
   },
   openGraph: {
     title: "Auberge Koki",
@@ -64,13 +66,26 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="ja">
+      <head>
+        <link
+          rel="preload"
+          href="/A-OTF-GothicBBBPr5-Medium.woff2"
+          as="font"
+          type="font/woff2"
+          crossOrigin="anonymous"
+        />
+      </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${inter.variable} antialiased bg-[rgb(245,245,245)]`}
+        className={`${geistSans.variable} ${geistMono.variable} ${inter.variable} antialiased bg-[rgb(245,245,245)] font-sans flex flex-col`}
+        suppressHydrationWarning={true}
       >
         <LocaleProvider>
           <GlobalHamburgerMenu />
-          {children}
+          <PageContainer>
+            {children}
+          </PageContainer>
+          <FooterSection />
         </LocaleProvider>
       </body>
     </html>

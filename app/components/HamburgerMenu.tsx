@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 interface HamburgerMenuProps {
   isOpen: boolean;
@@ -9,6 +9,18 @@ interface HamburgerMenuProps {
 
 export default function HamburgerMenu({ isOpen, onClick, isDark = false }: HamburgerMenuProps) {
   const [isHovered, setIsHovered] = useState(false);
+  const [isDesktop, setIsDesktop] = useState(false);
+
+  useEffect(() => {
+    const checkIsDesktop = () => {
+      setIsDesktop(window.innerWidth >= 768);
+    };
+    
+    checkIsDesktop();
+    window.addEventListener('resize', checkIsDesktop);
+    
+    return () => window.removeEventListener('resize', checkIsDesktop);
+  }, []);
 
   return (
     <button
@@ -21,11 +33,11 @@ export default function HamburgerMenu({ isOpen, onClick, isDark = false }: Hambu
       <div className="relative w-20 h-12 md:w-24 md:h-14 flex flex-col justify-center items-center">
         <motion.span
           className="absolute block w-10"
-          style={{ height: '1px' }}
           animate={{
             rotate: isOpen ? 45 : 0,
-            y: isOpen ? 0 : (isHovered ? -13 : -10),
+            y: isOpen ? 0 : (isHovered ? (isDesktop ? -16 : -13) : (isDesktop ? -20 : -14)),
             width: isOpen ? "2.8rem" : (isHovered ? "3.0rem" : "2.6rem"),
+            height: isDesktop ? '1.5px' : '1px',
             backgroundColor: isDark ? "#000000" : "#ffffff",
           }}
           transition={{ 
@@ -37,11 +49,11 @@ export default function HamburgerMenu({ isOpen, onClick, isDark = false }: Hambu
         />
         <motion.span
           className="absolute block w-10"
-          style={{ height: '1px' }}
           animate={{
             opacity: isOpen ? 0 : 1,
             scaleX: isOpen ? 0 : 1,
             width: isOpen ? "2.8rem" : (isHovered ? "3.0rem" : "2.6rem"),
+            height: isDesktop ? '1.5px' : '1px',
             backgroundColor: isDark ? "#000000" : "#ffffff",
           }}
           transition={{ 
@@ -53,11 +65,11 @@ export default function HamburgerMenu({ isOpen, onClick, isDark = false }: Hambu
         />
         <motion.span
           className="absolute block w-10"
-          style={{ height: '1px' }}
           animate={{
             rotate: isOpen ? -45 : 0,
-            y: isOpen ? 0 : (isHovered ? 13 : 10),
+            y: isOpen ? 0 : (isHovered ? (isDesktop ? 16 : 13) : (isDesktop ? 20 : 14)),
             width: isOpen ? "2.8rem" : (isHovered ? "3.0rem" : "2.6rem"),
+            height: isDesktop ? '1.5px' : '1px',
             backgroundColor: isDark ? "#000000" : "#ffffff",
           }}
           transition={{ 
