@@ -30,7 +30,12 @@ export const metadata: Metadata = {
   creator: "Auberge Koki",
   publisher: "Auberge Koki",
   icons: {
-    icon: "/koki_vert_white_logo.png",
+    icon: [
+      { url: "/ogp.png", type: "image/png" },
+    ],
+    apple: [
+      { url: "/ogp.png", type: "image/png" },
+    ],
   },
   openGraph: {
     title: "Auberge Koki",
