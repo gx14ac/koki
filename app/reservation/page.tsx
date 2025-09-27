@@ -19,7 +19,7 @@ export default function Reservation() {
   return (
     <div>
       {/* モバイル版（スクショ準拠） */}
-      <div className="block md:hidden pt-10">
+      <div className="block 2xl:hidden pt-10">
 
       {/* 左上ロゴは共通コンポーネントで固定表示されるため削除 */}
 
@@ -170,7 +170,7 @@ export default function Reservation() {
       </div>
 
       {/* タブレット/PC版（従来レイアウト） */}
-      <div className="hidden md:block -mt-20">
+      <div className="hidden 2xl:block -mt-20">
         <section className="w-full text-black">
           {/* 左上ロゴは共通コンポーネントで固定表示されるため削除 */}
 
