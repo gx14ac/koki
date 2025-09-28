@@ -56,7 +56,7 @@ export default function About() {
       
 
       {/* 2枚の画像を左右に継ぎ目なく長方形で配置 */}
-      <div className="hidden xl:flex w-full items-center justify-center xl:mt-24">
+      <div className="hidden xl:flex w-full items-center justify-center xl:mt-8">
         <div className="w-full max-w-[1000px] lg:max-w-[1200px] md:px-6">
           <div className="relative w-full aspect-[14/9] md:aspect-[16/9]">
             {/* 左の縦書きキャプション */}
