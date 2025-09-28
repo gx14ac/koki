@@ -126,7 +126,7 @@ export default function Reservation() {
                     <span className="tracking-wide">¥3,300/名</span>
                   </li>
                 </ul>
-                <p className="text-[11px] mt-3 whitespace-nowrap">※ 3名宿泊の場合は、お部屋のご料金を¥55,000（税込）にて<br></br>ご案内させて頂きます。</p>
+                <p className="text-[12px] mt-3 whitespace-nowrap">※ 3名宿泊の場合は、お部屋のご料金を¥55,000（税込）にて<br></br>ご案内させて頂きます。</p>
               </div>
 
               {/* IRORI */}
