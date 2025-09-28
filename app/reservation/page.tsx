@@ -31,13 +31,14 @@ export default function Reservation() {
             <div className="mt-8 space-y-4 text-[14px]">
               <div>
                 <p className="mb-1">お電話でのご予約</p>
-                <a href="tel:0554522781" >0554-52-2781</a>
+                <a href="tel:0554522781" className="underline underline-offset-[2px]">0554-52-2781</a>
               </div>
               <div>
                 <a
                   href="https://www.tablecheck.com/ja/shops/koki/reserve?fbclid=PARlRTSAMyJAtleHRuA2FlbQIxMQABp-AmKhUpCPKtRZyduRntuUCn-tBNhQTTz53HNAcEdG8zr7iuStEJ-3E3OBou_aem_Cwsx_39V0CAJwx-WIB_AYg"
                   target="_blank"
                   rel="noopener noreferrer"
+                  className="underline underline-offset-[2px]"
                 >
                   TableCheckでのご予約
                 </a>
@@ -214,7 +215,7 @@ export default function Reservation() {
                       <div className="mt-4">
                         <p>お電話でのご予約</p>
                         <p>
-                          <a href="tel:0554522781" className="hover:no-underline">0554-52-2781</a>
+                          <a href="tel:0554522781" className="underline underline-offset-[2px]">0554-52-2781</a>
                         </p>
                       </div>
                       <div>
@@ -223,7 +224,7 @@ export default function Reservation() {
                             href="https://www.tablecheck.com/ja/shops/koki/reserve?fbclid=PARlRTSAMyJAtleHRuA2FlbQIxMQABp-AmKhUpCPKtRZyduRntuUCn-tBNhQTTz53HNAcEdG8zr7iuStEJ-3E3OBou_aem_Cwsx_39V0CAJwx-WIB_AYg"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="hover:no-underline"
+                            className="underline underline-offset-[2px]"
                           >
                             TableCheckでのご予約
                           </a>
