@@ -44,6 +44,10 @@ export default function SimpleMenu({ onClose, onMenuSelect, isDark = false }: Si
     };
   }, []);
   
+  const showMobileTopLeftLogo = ["/", "/reservation", "/stay", "/about", "/contact"].some(
+    (p) => pathname.startsWith(p)
+  );
+  
   const menuItems = [
     "RESERVATION",
     "STAY",
@@ -148,14 +152,14 @@ export default function SimpleMenu({ onClose, onMenuSelect, isDark = false }: Si
       exit="exit"
     >
       <div className="flex h-full flex-row-reverse md:flex-row">
-        {/* モバイル左上ロゴ（トップページのみ表示） */}
-        {pathname === '/' && (
+        {/* モバイル左上ロゴ（トップ・Reservation・Stay・About・Contact で表示） */}
+        {showMobileTopLeftLogo && (
           <div className="absolute top-6 left-3 md:hidden pointer-events-none z-[210]">
             <Image
               src="/koki_vert_logo_black.png"
               alt="KOKI"
-              width={60}
-              height={40}
+              width={80}
+              height={54}
               priority
             />
           </div>
