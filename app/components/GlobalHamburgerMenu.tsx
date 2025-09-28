@@ -46,17 +46,17 @@ export default function GlobalHamburgerMenu() {
       {pathname !== '/' && (
         <div aria-hidden className="h-[90px] md:h-[220px]" />
       )}
-      {/* 左上固定ロゴ（ホーム以外で表示、メニュー全画面表示中は非表示） */}
-      {pathname !== '/' && !showMenu && (
-        <div className="fixed top-8 left-3 md:top-10 md:left-8 z-[240] hide-on-menu-open-mobile">
-          {/* PC/Tablet サイズ */}
-          <div className="hidden md:block">
+      {/* 左上固定ロゴ（ホーム以外で表示、PC/タブレットではメニュー全画面表示中は非表示、モバイルでは常に表示） */}
+      {pathname !== '/' && (
+      <div className="fixed top-10 left-3 md:top-12 md:left-8 z-[200]">
+          {/* PC/Tablet サイズ（メニュー表示時は非表示） */}
+          <div className={`hidden md:block ${showMenu ? 'md:hidden' : ''}`}>
             <Link href="/" className="transition-transform hover:scale-105">
               <Image
                 src="/koki_vert_white_logo.png"
                 alt="KOKI"
-                width={120}
-                height={160}
+                width={100}
+                height={100}
                 priority
                 className="filter invert"
               />
@@ -66,12 +66,11 @@ export default function GlobalHamburgerMenu() {
           <div className="block md:hidden">
             <Link href="/" className="transition-transform hover:scale-105 inline-block">
               <Image
-                src="/koki_vert_white_logo.png"
+                src="/koki_vert_logo_black.png"
                 alt="KOKI"
                 width={80}
                 height={54}
                 priority
-                className="filter invert"
               />
             </Link>
           </div>

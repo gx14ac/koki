@@ -10,16 +10,19 @@ interface HamburgerMenuProps {
 export default function HamburgerMenu({ isOpen, onClick, isDark = false }: HamburgerMenuProps) {
   const [isHovered, setIsHovered] = useState(false);
   const [isDesktop, setIsDesktop] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
-    const checkIsDesktop = () => {
-      setIsDesktop(window.innerWidth >= 768);
+    const checkScreenSize = () => {
+      const desktop = window.innerWidth >= 768;
+      setIsDesktop(desktop);
+      setIsMobile(!desktop);
     };
     
-    checkIsDesktop();
-    window.addEventListener('resize', checkIsDesktop);
+    checkScreenSize();
+    window.addEventListener('resize', checkScreenSize);
     
-    return () => window.removeEventListener('resize', checkIsDesktop);
+    return () => window.removeEventListener('resize', checkScreenSize);
   }, []);
 
   return (
@@ -38,7 +41,7 @@ export default function HamburgerMenu({ isOpen, onClick, isDark = false }: Hambu
             y: isOpen ? 0 : (isHovered ? (isDesktop ? -16 : -13) : (isDesktop ? -20 : -14)),
             width: isOpen ? "2.8rem" : (isHovered ? "3.0rem" : "2.6rem"),
             height: isDesktop ? '1.5px' : '1px',
-            backgroundColor: isDark ? "#000000" : "#ffffff",
+            backgroundColor: (isDark || (isMobile && isOpen)) ? "#000000" : "#ffffff",
           }}
           transition={{ 
             rotate: { duration: 0.4, ease: "easeInOut" },
@@ -54,7 +57,7 @@ export default function HamburgerMenu({ isOpen, onClick, isDark = false }: Hambu
             scaleX: isOpen ? 0 : 1,
             width: isOpen ? "2.8rem" : (isHovered ? "3.0rem" : "2.6rem"),
             height: isDesktop ? '1.5px' : '1px',
-            backgroundColor: isDark ? "#000000" : "#ffffff",
+            backgroundColor: (isDark || (isMobile && isOpen)) ? "#000000" : "#ffffff",
           }}
           transition={{ 
             opacity: { duration: 0.2, ease: "easeInOut" },
@@ -70,7 +73,7 @@ export default function HamburgerMenu({ isOpen, onClick, isDark = false }: Hambu
             y: isOpen ? 0 : (isHovered ? (isDesktop ? 16 : 13) : (isDesktop ? 20 : 14)),
             width: isOpen ? "2.8rem" : (isHovered ? "3.0rem" : "2.6rem"),
             height: isDesktop ? '1.5px' : '1px',
-            backgroundColor: isDark ? "#000000" : "#ffffff",
+            backgroundColor: (isDark || (isMobile && isOpen)) ? "#000000" : "#ffffff",
           }}
           transition={{ 
             rotate: { duration: 0.4, ease: "easeInOut" },

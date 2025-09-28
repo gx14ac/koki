@@ -21,9 +21,11 @@ export default function FooterSection() {
       <div className="block md:hidden" style={{ marginTop: 0 }}>
         <SectionBar variant="mobile-large" />
       </div>
-      <div className={`hidden md:block ${(isReservation || isStay) ? 'mt-2' : 'mt-10'}`}>
-        <SectionBar variant={(isReservation || isStay) ? "centered" : "more-left"} />
-      </div>
+      {!isReservation && (
+        <div className={`hidden md:block ${isStay ? 'mt-2' : 'mt-10'}`}>
+          <SectionBar variant={isStay ? "centered" : "more-left"} />
+        </div>
+      )}
     </>
   );
 }

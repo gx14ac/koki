@@ -32,13 +32,13 @@ export default function Contact() {
       <div className="w-full flex items-center justify-center pt-8 md:pt-0 pl-10 flex-1">
         <div className="flex flex-col md:flex-row items-center md:items-center justify-center w-full md:gap-16 max-w-4xl mx-auto">
           {/* Auberge KOKI画像 */}
-          <div className="w-full md:w-auto flex justify-start md:justify-center items-center mb-4 md:mb-0 pl-6 md:pl-0 md:mt-0 -mt-10">
+          <div className="w-full md:w-auto flex justify-start md:justify-center items-center mb-6 md:mb-0 pl-6 md:pl-0 md:mt-7.5 -mt-10">
             <Image
               src="/auberge_koki.png"
               alt="Auberge KOKI"
-              width={280}
+              width={190}
               height={120}
-              className="object-contain block w-48 h-auto md:w-[280px] md:h-[120px] md:-mt-46"
+              className="object-contain block w-[150px] h-auto md:w-[190px] md:h-[120px] md:-mt-46"
               priority
             />
           </div>
@@ -72,7 +72,7 @@ export default function Contact() {
       <div className="block md:hidden mt-auto mb-46">
         <SectionBar variant="mobile-large" />
       </div>
-      <div className="hidden md:block mt-auto mb-57">
+      <div className="hidden md:block mt-auto mb-56">
         <SectionBar variant="centered" />
       </div>
     </div>

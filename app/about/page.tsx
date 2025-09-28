@@ -6,36 +6,13 @@ import Link from "next/link";
 import SectionBar from "../components/SectionBar";
 
 export default function About() {
-  // webの時のみスクロールを無効化と最上部リセット
+  // web でもスクロール可能。初回のみ最上部へスクロール
   useEffect(() => {
-    // ページ読み込み時に最上部へスクロール
     window.scrollTo(0, 0);
-    
-    const handleResize = () => {
-      if (window.innerWidth >= 768) {
-        document.body.style.overflow = 'hidden';
-        document.body.style.height = '100vh';
-      } else {
-        document.body.style.overflow = '';
-        document.body.style.height = '';
-      }
-    };
-
-    // 初回実行
-    handleResize();
-    
-    // リサイズ時に実行
-    window.addEventListener('resize', handleResize);
-    
-    return () => {
-      document.body.style.overflow = '';
-      document.body.style.height = '';
-      window.removeEventListener('resize', handleResize);
-    };
   }, []);
 
   return (
-    <div className="font-sans relative flex flex-col">
+    <div className="font-sans relative flex flex-col h-screen xl:h-auto overflow-x-hidden">
       {/* About page specific wrapper */}
       <div className="flex-1 flex flex-col">
       {/* モバイル専用ビジュアル - 上段：全幅画像 */}
@@ -79,7 +56,7 @@ export default function About() {
       
 
       {/* 2枚の画像を左右に継ぎ目なく長方形で配置 */}
-      <div className="hidden xl:flex w-full items-center justify-center">
+      <div className="hidden xl:flex w-full items-center justify-center xl:mt-24">
         <div className="w-full max-w-[1000px] lg:max-w-[1200px] md:px-6">
           <div className="relative w-full aspect-[14/9] md:aspect-[16/9]">
             {/* 左の縦書きキャプション */}
@@ -115,14 +92,12 @@ export default function About() {
       </div>
       
       {/* aboutページ専用のフッター表示 */}
-      <div className="block xl:hidden mt-12">
+      <div className="block xl:hidden mt-auto">
         <SectionBar variant="mobile-large" />
       </div>
-      <div className="hidden xl:block mt-16">
+      <div className="hidden md:block mt-65">
         <SectionBar variant="centered" />
       </div>
-      {/* Webレイアウト用のセクションバー下部スペース */}
-      <div className="hidden xl:block mb-16"></div>
     </div>
   );
 }

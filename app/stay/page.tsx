@@ -131,7 +131,7 @@ export default function Stay() {
               <div className="font-light text-[12px] md:text-[20px]">設備・アメニティ</div>
               <div>
                 <p className="whitespace-pre-wrap leading-tight md:leading-relaxed text-[10px] md:text-[16px]">
-                  ドライヤー / ソープ類（シャンプー・リンス・ボディソープ） / タオル類（フェイスタオル・バスタオル） / ボディタオル歯ブラシ / メンズ用髭剃り / コーム / ティッシュケース / ハンガー / スリッパ / 冷蔵庫 / Wi-Fi 完備 / 風呂トイレ別 / 独立洗面台
+                  ドライヤー / ソープ類（シャンプー・リンス・ボディソープ） / タオル類（フェイスタオル・バスタオル）/ ボディタオル<br></br>歯ブラシ / メンズ用髭剃り / コーム / ティッシュケース / ハンガー / スリッパ / 冷蔵庫 / Wi-Fi 完備 / 風呂トイレ別 / 独立洗面台
                 </p>
               </div>
             </div>

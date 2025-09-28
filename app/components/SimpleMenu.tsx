@@ -139,6 +139,9 @@ export default function SimpleMenu({ onClose, onMenuSelect, isDark = false }: Si
   return (
     <motion.div 
       className="fixed inset-0 z-[200]"
+      style={{
+        backgroundColor: isMobile ? 'rgb(245, 245, 245)' : 'transparent'
+      }}
       variants={containerVariants}
       initial="hidden"
       animate="visible"
@@ -147,14 +150,13 @@ export default function SimpleMenu({ onClose, onMenuSelect, isDark = false }: Si
       <div className="flex h-full flex-row-reverse md:flex-row">
         {/* モバイル左上ロゴ（トップページのみ表示） */}
         {pathname === '/' && (
-          <div className="absolute top-8 left-4 md:hidden pointer-events-none z-[210] -translate-y-1">
+          <div className="absolute top-6 left-3 md:hidden pointer-events-none z-[210]">
             <Image
-              src="/koki_vert_white_logo.png"
+              src="/koki_vert_logo_black.png"
               alt="KOKI"
-              width={80}
-              height={120}
+              width={60}
+              height={40}
               priority
-              className={isDark ? "filter invert" : ""}
             />
           </div>
         )}
@@ -182,7 +184,7 @@ export default function SimpleMenu({ onClose, onMenuSelect, isDark = false }: Si
                   key={item}
                   variants={itemVariants}
                   className={`block text-left text-xl lg:text-2xl font-light tracking-wide transition-all duration-300 hover:scale-101 ${
-                    isDark 
+                    isMobile || isDark 
                       ? 'text-black hover:text-gray-600' 
                       : 'text-white hover:text-gray-300'
                   }`}
@@ -201,7 +203,7 @@ export default function SimpleMenu({ onClose, onMenuSelect, isDark = false }: Si
                   key={item}
                   variants={itemVariants}
                   className={`block text-left md:text-right text-xl lg:text-2xl font-light tracking-wide transition-all duration-300 hover:scale-105 ${
-                    isDark 
+                    isMobile || isDark 
                       ? 'text-black hover:text-gray-600' 
                       : 'text-white hover:text-gray-300'
                   }`}
@@ -213,7 +215,7 @@ export default function SimpleMenu({ onClose, onMenuSelect, isDark = false }: Si
               )
             ))}
         <div className="pt-8">
-            <LocaleButton isDark={isDark} variant="menu" />
+            <LocaleButton isDark={isMobile || isDark} variant="menu" />
             </div>
           </motion.nav>
         </div>
