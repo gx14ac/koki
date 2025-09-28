@@ -48,7 +48,7 @@ export default function GlobalHamburgerMenu() {
       )}
       {/* 左上固定ロゴ（ホーム以外で表示、PC/タブレットではメニュー全画面表示中は非表示、モバイルでは常に表示） */}
       {pathname !== '/' && (
-      <div className="fixed top-10 left-3 md:top-12 md:left-8 z-[200]">
+      <div className="fixed top-7 left-3 md:top-12 md:left-8 z-[200]">
           {/* PC/Tablet サイズ（メニュー表示時は非表示） */}
           <div className={`hidden md:block ${showMenu ? 'md:hidden' : ''}`}>
             <Link href="/" className="transition-transform hover:scale-105">
