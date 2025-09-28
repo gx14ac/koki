@@ -42,10 +42,10 @@ export default function Reservation() {
                   TableCheckでのご予約
                 </a>
             <p className="text-[12px] mt-6">
-              ご宿泊をご希望のお客様は、5日までにご予約くださいますようお願い申し上げます。
+              ご宿泊をご希望のお客様は、5日前までにご予約くださいますようお願い申し上げます。
             </p>
             <p className="text-[12px] mt-1">
-              お食事のみをご希望のお客様は、3日までにご予約をお願いいたします。
+              お食事のみをご希望のお客様は、3日前までにご予約をお願いいたします。
             </p>
               </div>
             </div>
@@ -111,7 +111,7 @@ export default function Reservation() {
                 <ul className="text-[14px]">
                 <li className="flex items-center justify-between py-6 border-b-[0.5px] border-[rgb(51,51,51)]">
                     <span>Tasting Course</span>
-                    <span className="tracking-wide">¥19,800/名</span>
+                    <span className="tracking-wide">¥39,600/名</span>
                   </li>
                   <li className="flex items-center justify-between py-4 border-b-[0.5px] border-[rgb(51,51,51)]">
                     <span>Tasting Course <br></br>-Alchol Pairing</span>
@@ -229,10 +229,10 @@ export default function Reservation() {
                           </a>
                         </p>
                     <p className="md:text-[14px] text-[10px] leading-relaxed whitespace-nowrap mt-4">
-                      ご宿泊をご希望のお客様は、5日までにご予約くださいますようお願い申し上げます。
+                      ご宿泊をご希望のお客様は、5日前までにご予約くださいますようお願い申し上げます。
                     </p>
                     <p className="md:text-[14px] text-[10px] leading-relaxed mb-8 whitespace-nowrap">
-                      お食事のみをご希望のお客様は、3日までにご予約をお願いいたします。
+                      お食事のみをご希望のお客様は、3日前までにご予約をお願いいたします。
                     </p>
                         <div className="w-10 h-[0.5px] bg-[rgb(51,51,51)] my-8" />
                       </div>
