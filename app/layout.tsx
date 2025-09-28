@@ -80,6 +80,9 @@ export default function RootLayout({
           type="font/woff2"
           crossOrigin="anonymous"
         />
+        <link rel="icon" href="/ogp.png" type="image/png" />
+        <link rel="shortcut icon" href="/ogp.png" type="image/png" />
+        <link rel="apple-touch-icon" href="/ogp.png" />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${inter.variable} antialiased bg-[rgb(245,245,245)] font-sans flex flex-col`}
